@@ -10,6 +10,8 @@ runners:
     machine_image: ubuntu-2204-nvidia-20230914
     region: RegionOne
     labels:
+      - linux
+      - x64
       - cirun-openstack-gpu-large
 
   - name: cirun-openstack-cpu-medium
@@ -21,4 +23,6 @@ runners:
     machine_image: ubuntu-2204-cloud-jammy-20221104
     region: RegionOne
     labels:
+      - linux
+      - x64
       - cirun-openstack-cpu-medium

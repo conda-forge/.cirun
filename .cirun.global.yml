@@ -1,1 +1,24 @@
-run_only_when_triggered_by: core
+# Self-Hosted Github Action Runners on Openstack via Cirun.io
+# Reference: https://docs.cirun.io/reference/yaml
+runners:
+  - name: cirun-openstack-gpu-large
+    # Cloud Provider: Openstack
+    cloud: openstack
+    # Instance type refers to flavors in openstack
+    instance_type: gpu_large
+    # The machine image to use for creating VM
+    machine_image: ubuntu-2204-nvidia-20230914
+    region: RegionOne
+    labels:
+      - cirun-openstack-gpu-large
+
+  - name: cirun-openstack-cpu-medium
+    # Cloud Provider: Openstack
+    cloud: openstack
+    # Instance type refers to flavors in openstack
+    instance_type: ci_medium
+    # The machine image to use for creating VM
+    machine_image: ubuntu-2204-cloud-jammy-20221104
+    region: RegionOne
+    labels:
+      - cirun-openstack-cpu-medium

@@ -7,7 +7,7 @@ runners:
     # Instance type refers to flavors in openstack
     instance_type: gpu_large
     # The machine image to use for creating VM
-    machine_image: ubuntu-2204-nvidia-docker-20221229
+    machine_image: ubuntu-2204-nvidia-20230914
     region: RegionOne
     labels:
       - cirun-openstack-gpu-large

@@ -20,7 +20,7 @@ runners:
     # Instance type refers to flavors in openstack
     instance_type: ci_medium
     # The machine image to use for creating VM
-    machine_image: ubuntu-2204-cloud-jammy-20221104
+    machine_image: ubuntu-2204-20231018
     region: RegionOne
     labels:
       - linux

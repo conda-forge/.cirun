@@ -14,7 +14,6 @@ runners:
       - x64
       - cirun-openstack-gpu-large
 
-runners:
   - name: cirun-openstack-gpu-xlarge
     # Cloud Provider: Openstack
     cloud: openstack
@@ -52,4 +51,4 @@ runners:
     labels:
       - linux
       - x64
-      - cirun-openstack-cpu-medium
+      - cirun-openstack-cpu-large

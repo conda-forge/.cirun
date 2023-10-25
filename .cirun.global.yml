@@ -14,6 +14,20 @@ runners:
       - x64
       - cirun-openstack-gpu-large
 
+runners:
+  - name: cirun-openstack-gpu-xlarge
+    # Cloud Provider: Openstack
+    cloud: openstack
+    # Instance type refers to flavors in openstack
+    instance_type: gpu_xlarge
+    # The machine image to use for creating VM
+    machine_image: ubuntu-2204-nvidia-20230914
+    region: RegionOne
+    labels:
+      - linux
+      - x64
+      - cirun-openstack-gpu-xlarge
+
   - name: cirun-openstack-cpu-medium
     # Cloud Provider: Openstack
     cloud: openstack

@@ -1,0 +1,24 @@
+version: 1
+
+policies:
+  - id: cf-autotick-bot-test-package-policy
+    repo: cf-autotick-bot-test-package-feedstock
+    teams:
+      - core
+
+access_control:
+  - resource: cirun-openstack-gpu-large
+    policies:
+      - cf-autotick-bot-test-package-policy
+      
+  - resource: cirun-openstack-gpu-xlarge
+    policies:
+      - cf-autotick-bot-test-package-policy
+
+  - resource: cirun-openstack-cpu-medium
+    policies:
+      - cf-autotick-bot-test-package-policy
+
+  - resource: cirun-openstack-cpu-large
+    policies:
+      - cf-autotick-bot-test-package-policy      

@@ -1,24 +1,27 @@
 version: 1
-
 policies:
   - id: cf-autotick-bot-test-package-policy
     repo: cf-autotick-bot-test-package-feedstock
     teams:
       - core
-
+    pull_request: false
+  - id: conda-smithy-feedstock-policy
+    repo: conda-smithy-feedstock
+    teams:
+      - conda-smithy
+      - Core
+    pull_request: false
 access_control:
   - resource: cirun-openstack-gpu-large
     policies:
       - cf-autotick-bot-test-package-policy
-      
+      - conda-smithy-feedstock-policy
   - resource: cirun-openstack-gpu-xlarge
     policies:
       - cf-autotick-bot-test-package-policy
-
   - resource: cirun-openstack-cpu-medium
     policies:
       - cf-autotick-bot-test-package-policy
-
   - resource: cirun-openstack-cpu-large
     policies:
-      - cf-autotick-bot-test-package-policy      
+      - cf-autotick-bot-test-package-policy

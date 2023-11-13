@@ -5,6 +5,7 @@ policies:
     teams:
       - cf-autotick-bot-test-package
       - Core
+      - core
     pull_request: false
   - id: conda-smithy-feedstock-policy
     repo: conda-smithy-feedstock

@@ -11,11 +11,18 @@ policies:
       - conda-smithy
       - Core
     pull_request: false
+  - id: conda-forge-ci-setup-feedstock-policy
+    repo: conda-forge-ci-setup-feedstock
+    teams:
+      - conda-forge-ci-setup
+      - Core
+    pull_request: false
 access_control:
   - resource: cirun-openstack-gpu-large
     policies:
       - cf-autotick-bot-test-package-policy
       - conda-smithy-feedstock-policy
+      - conda-forge-ci-setup-feedstock-policy
   - resource: cirun-openstack-gpu-xlarge
     policies:
       - cf-autotick-bot-test-package-policy

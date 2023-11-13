@@ -3,7 +3,7 @@ policies:
   - id: cf-autotick-bot-test-package-policy
     repo: cf-autotick-bot-test-package-feedstock
     teams:
-      - core
+      - cf-autotick-bot-test-package
     pull_request: false
   - id: conda-smithy-feedstock-policy
     repo: conda-smithy-feedstock

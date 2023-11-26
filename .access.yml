@@ -5,21 +5,21 @@ policies:
     users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
     roles:
       - admin
-      - maintainer
+      - maintain
     pull_request: false
   - id: conda-smithy-feedstock-policy
     repo: conda-smithy-feedstock
     users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
     roles:
       - admin
-      - maintainer
+      - maintain
     pull_request: false
   - id: conda-forge-ci-setup-feedstock-policy
     repo: conda-forge-ci-setup-feedstock
     users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
     roles:
       - admin
-      - maintainer
+      - maintain
     pull_request: false
 access_control:
   - resource: cirun-openstack-gpu-large

@@ -2,20 +2,24 @@ version: 1
 policies:
   - id: cf-autotick-bot-test-package-policy
     repo: cf-autotick-bot-test-package-feedstock
-    teams:
-      - cf-autotick-bot-test-package
+    users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
+    roles:
+      - admin
+      - maintain
     pull_request: false
   - id: conda-smithy-feedstock-policy
     repo: conda-smithy-feedstock
-    teams:
-      - conda-smithy
-      - Core
+    users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
+    roles:
+      - admin
+      - maintain
     pull_request: false
   - id: conda-forge-ci-setup-feedstock-policy
     repo: conda-forge-ci-setup-feedstock
-    teams:
-      - conda-forge-ci-setup
-      - Core
+    users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
+    roles:
+      - admin
+      - maintain
     pull_request: false
 access_control:
   - resource: cirun-openstack-gpu-large

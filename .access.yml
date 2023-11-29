@@ -28,6 +28,13 @@ policies:
       - maintain
     pull_request: false
     users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
+  - id: libmagma-feedstock-policy
+    repo: libmagma-feedstock
+    roles:
+      - admin
+      - maintain
+    pull_request: true
+    users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
 access_control:
   - resource: cirun-openstack-gpu-large
     policies:
@@ -35,6 +42,7 @@ access_control:
       - conda-smithy-feedstock-policy
       - conda-forge-ci-setup-feedstock-policy
       - pytorch-cpu-feedstock-policy
+      - libmagma-feedstock-policy
   - resource: cirun-openstack-gpu-xlarge
     policies:
       - cf-autotick-bot-test-package-policy

@@ -54,3 +54,4 @@ access_control:
   - resource: cirun-openstack-cpu-large
     policies:
       - cf-autotick-bot-test-package-policy
+      - pytorch-cpu-feedstock-policy

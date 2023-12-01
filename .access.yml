@@ -44,7 +44,6 @@ access_control:
       - conda-smithy-feedstock-policy
       - conda-forge-ci-setup-feedstock-policy
       - libmagma-feedstock-policy
-      - pytorch-cpu-feedstock-policy
   - resource: cirun-openstack-gpu-xlarge
     policies:
       - cf-autotick-bot-test-package-policy

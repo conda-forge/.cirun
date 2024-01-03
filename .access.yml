@@ -5,6 +5,7 @@ policies:
     roles:
       - admin
       - maintain
+      - write
     pull_request: false
     users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
   - id: conda-smithy-feedstock-policy
@@ -12,6 +13,7 @@ policies:
     roles:
       - admin
       - maintain
+      - write
     pull_request: false
     users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
   - id: conda-forge-ci-setup-feedstock-policy
@@ -19,6 +21,7 @@ policies:
     roles:
       - admin
       - maintain
+      - write
     pull_request: false
     users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
   - id: libmagma-feedstock-policy
@@ -26,6 +29,7 @@ policies:
     roles:
       - admin
       - maintain
+      - write
     pull_request: true
     users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
   - id: pytorch-cpu-feedstock-policy
@@ -33,8 +37,7 @@ policies:
     roles:
       - admin
       - maintain
-      - admin
-      - maintain
+      - write
     pull_request: true
     users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
 access_control:

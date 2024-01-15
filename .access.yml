@@ -70,3 +70,6 @@ access_control:
   - resource: cirun-openstack-cpu-4xlarge
     policies:
       - cf-autotick-bot-test-package-policy
+  - resource: cirun-openstack-cpu-xlarge
+    policies:
+      - cf-autotick-bot-test-package-policy

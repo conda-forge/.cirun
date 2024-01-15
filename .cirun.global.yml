@@ -79,6 +79,19 @@ runners:
       - x64
       - cirun-openstack-cpu-large
 
+  - name: cirun-openstack-cpu-xlarge
+    # Cloud Provider: Openstack
+    cloud: openstack
+    # Instance type refers to flavors in openstack
+    instance_type: ci_xlarge
+    # The machine image to use for creating VM
+    machine_image: ubuntu-2204-20231018
+    region: RegionOne
+    labels:
+      - linux
+      - x64
+      - cirun-openstack-cpu-xlarge
+
   - name: cirun-openstack-cpu-2xlarge
     # Cloud Provider: Openstack
     cloud: openstack

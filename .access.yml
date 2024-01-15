@@ -6,27 +6,6 @@ policies:
       - admin
       - maintain
       - write
-      - admin
-      - maintain
-      - write
-      - admin
-      - maintain
-      - write
-      - admin
-      - maintain
-      - write
-      - admin
-      - maintain
-      - write
-      - admin
-      - maintain
-      - write
-      - admin
-      - maintain
-      - write
-      - admin
-      - maintain
-      - write
     pull_request: false
     users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
   - id: conda-smithy-feedstock-policy

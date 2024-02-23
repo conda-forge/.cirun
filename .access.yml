@@ -40,6 +40,14 @@ policies:
       - write
     pull_request: true
     users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
+  - id: cutlass-feedstock-policy
+    repo: cutlass-feedstock
+    roles:
+      - admin
+      - maintain
+      - write
+    pull_request: true
+    users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
 access_control:
   - resource: cirun-openstack-gpu-large
     policies:
@@ -58,6 +66,7 @@ access_control:
     policies:
       - cf-autotick-bot-test-package-policy
       - pytorch-cpu-feedstock-policy
+      - cutlass-feedstock-policy
   - resource: cirun-openstack-gpu-2xlarge
     policies:
       - cf-autotick-bot-test-package-policy

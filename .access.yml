@@ -104,9 +104,12 @@ access_control:
     policies:
       - cf-autotick-bot-test-package-policy
       - jaxlib-feedstock-policy
+      - tensorflow-feedstock-policy
   - resource: cirun-openstack-cpu-4xlarge
     policies:
       - cf-autotick-bot-test-package-policy
+      - tensorflow-feedstock-policy
   - resource: cirun-openstack-cpu-xlarge
     policies:
       - cf-autotick-bot-test-package-policy
+      - tensorflow-feedstock-policy

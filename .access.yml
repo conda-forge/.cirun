@@ -83,6 +83,7 @@ access_control:
   - resource: cirun-openstack-gpu-xlarge
     policies:
       - cf-autotick-bot-test-package-policy
+      - pytorch-cpu-feedstock-policy
   - resource: cirun-openstack-cpu-medium
     policies:
       - cf-autotick-bot-test-package-policy
@@ -97,9 +98,11 @@ access_control:
   - resource: cirun-openstack-gpu-2xlarge
     policies:
       - cf-autotick-bot-test-package-policy
+      - pytorch-cpu-feedstock-policy
   - resource: cirun-openstack-gpu-4xlarge
     policies:
       - cf-autotick-bot-test-package-policy
+      - pytorch-cpu-feedstock-policy
   - resource: cirun-openstack-cpu-2xlarge
     policies:
       - cf-autotick-bot-test-package-policy

@@ -86,6 +86,9 @@ policies:
       - admin
       - maintain
       - write
+    users:
+      - wolfv
+      - baszalmstra 
     pull_request: true
 access_control:
   - resource: cirun-openstack-gpu-large

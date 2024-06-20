@@ -127,3 +127,5 @@ runners:
     labels:
       - windows
       - cirun-azure-windows-medium
+    extra_config:
+      licenseType: Windows_Server      

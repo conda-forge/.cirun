@@ -118,7 +118,7 @@ runners:
       - x64
       - cirun-openstack-cpu-4xlarge
 
-  - name: cirun-azure-windows-medium
+  - name: cirun-azure-windows-2xlarge
     cloud: azure
     # 2 cores, 8GB Ram, x64
     instance_type: Standard_D2s_v3
@@ -126,6 +126,6 @@ runners:
     region: uksouth
     labels:
       - windows
-      - cirun-azure-windows-medium
+      - cirun-azure-windows-2xlarge
     extra_config:
       licenseType: Windows_Server

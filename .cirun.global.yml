@@ -117,3 +117,13 @@ runners:
       - linux
       - x64
       - cirun-openstack-cpu-4xlarge
+
+  - name: cirun-azure-windows-medium
+    cloud: azure
+    # 2 cores, 8GB Ram, x64
+    instance_type: Standard_D2s_v3
+    machine_image: "/subscriptions/df033e15-d7e5-43a0-88b8-95b833d272f9/resourceGroups/cirun-runner-images-via-packer/providers/Microsoft.Compute/images/cirun-win22-dev"
+    region: uksouth
+    labels:
+      - windows
+      - cirun-azure-windows-medium

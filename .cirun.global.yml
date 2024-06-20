@@ -128,4 +128,4 @@ runners:
       - windows
       - cirun-azure-windows-medium
     extra_config:
-      licenseType: Windows_Server      
+      licenseType: Windows_Server

@@ -126,6 +126,7 @@ runners:
     region: uksouth
     labels:
       - windows
+      - x64
       - cirun-azure-windows-2xlarge
     extra_config:
       licenseType: Windows_Server

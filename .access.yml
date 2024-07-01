@@ -88,8 +88,16 @@ policies:
       - write
     users:
       - wolfv
-      - baszalmstra 
+      - baszalmstra
     pull_request: true
+  - id: nodejs-feedstock-policy
+    repo: nodejs-feedstock
+    roles:
+      - admin
+      - maintain
+      - write
+    pull_request: true
+    users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
 access_control:
   - resource: cirun-openstack-gpu-large
     policies:
@@ -113,6 +121,7 @@ access_control:
       - tensorflow-feedstock-policy
       - mongodb-feedstock-policy
       - jaxlib-feedstock-policy
+      - nodejs-feedstock-policy
   - resource: cirun-openstack-gpu-2xlarge
     policies:
       - cf-autotick-bot-test-package-policy

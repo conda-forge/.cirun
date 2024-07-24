@@ -147,3 +147,6 @@ access_control:
   - resource: cirun-azure-windows-2xlarge
     policies:
       - pytorch-cpu-feedstock-windows-policy
+  - resource: cirun-azure-windows-4xlarge
+    policies:
+      - pytorch-cpu-feedstock-windows-policy

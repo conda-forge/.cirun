@@ -19,5 +19,6 @@ Check their README for the technical specs of each flavor.
 | `cirun-openstack-gpu-4xlarge` | `gpu_4xlarge`    |
 | `cirun-openstack-cpu-medium`  | `ci_medium`      |
 | `cirun-openstack-cpu-large`   | `ci_large`       |
+| `cirun-openstack-cpu-xlarge`  | `ci_xlarge`      |
 | `cirun-openstack-cpu-2xlarge` | `ci_2xlarge`     |
 | `cirun-openstack-cpu-4xlarge` | `ci_4xlarge`     |

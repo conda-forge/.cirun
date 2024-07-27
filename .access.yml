@@ -144,6 +144,7 @@ access_control:
       - cf-autotick-bot-test-package-policy
       - tensorflow-feedstock-policy
       - xformers-feedstock-policy
+      - mongodb-feedstock-policy
   - resource: cirun-azure-windows-2xlarge
     policies:
       - pytorch-cpu-feedstock-windows-policy

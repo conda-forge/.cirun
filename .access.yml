@@ -98,6 +98,14 @@ policies:
       - write
     pull_request: true
     users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
+  - id: flash-attn-feedstock-policy
+    repo: flash-attn-feedstock
+    roles:
+      - admin
+      - maintain
+      - write
+    pull_request: true
+    users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
 access_control:
   - resource: cirun-openstack-gpu-large
     policies:
@@ -106,6 +114,7 @@ access_control:
       - conda-forge-ci-setup-feedstock-policy
       - libmagma-feedstock-policy
       - pytorch-cpu-feedstock-policy
+      - flash-attn-feedstock-policy
   - resource: cirun-openstack-gpu-xlarge
     policies:
       - cf-autotick-bot-test-package-policy
@@ -122,6 +131,7 @@ access_control:
       - mongodb-feedstock-policy
       - jaxlib-feedstock-policy
       - nodejs-feedstock-policy
+      - flash-attn-feedstock-policy
   - resource: cirun-openstack-gpu-2xlarge
     policies:
       - cf-autotick-bot-test-package-policy

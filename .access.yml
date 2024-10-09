@@ -155,6 +155,7 @@ access_control:
       - tensorflow-feedstock-policy
       - xformers-feedstock-policy
       - mongodb-feedstock-policy
+      - flash-attn-feedstock-policy
   - resource: cirun-azure-windows-2xlarge
     policies:
       - pytorch-cpu-feedstock-windows-policy

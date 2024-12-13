@@ -86,10 +86,7 @@ policies:
       - admin
       - maintain
       - write
-    users:
-      - wolfv
-      - baszalmstra
-      - Tobias-Fischer
+    users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
     pull_request: true
   - id: nodejs-feedstock-policy
     repo: nodejs-feedstock

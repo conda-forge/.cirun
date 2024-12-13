@@ -89,6 +89,7 @@ policies:
     users:
       - wolfv
       - baszalmstra
+      - Tobias-Fischer
     pull_request: true
   - id: nodejs-feedstock-policy
     repo: nodejs-feedstock

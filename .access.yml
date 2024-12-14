@@ -90,6 +90,9 @@ policies:
       - wolfv
       - baszalmstra
       - Tobias-Fischer
+      - hmaarrfk
+      - h-vetinari
+      - isuruf
     pull_request: true
   - id: nodejs-feedstock-policy
     repo: nodejs-feedstock

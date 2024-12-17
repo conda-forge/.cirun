@@ -78,6 +78,8 @@ policies:
       - admin
       - maintain
       - write
+    users:
+      - hadim
     pull_request: true
     users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
   - id: pytorch-cpu-feedstock-windows-policy

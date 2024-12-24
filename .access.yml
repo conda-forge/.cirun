@@ -114,6 +114,7 @@ policies:
       - write
     users:
       - cbourjau
+      - hmaarrfk
     pull_request: true
 access_control:
   - resource: cirun-openstack-gpu-large

@@ -110,6 +110,16 @@ policies:
       - write
     pull_request: true
     users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
+  - id: onnxruntime-feedstock-windows-policy
+    repo: onnxruntime-feedstock
+    roles:
+      - admin
+      - maintain
+      - write
+    users:
+      - cbourjau
+      - hmaarrfk
+    pull_request: true
 access_control:
   - resource: cirun-openstack-gpu-large
     policies:
@@ -163,6 +173,8 @@ access_control:
   - resource: cirun-azure-windows-2xlarge
     policies:
       - pytorch-cpu-feedstock-windows-policy
+      - onnxruntime-feedstock-windows-policy
   - resource: cirun-azure-windows-4xlarge
     policies:
       - pytorch-cpu-feedstock-windows-policy
+      - onnxruntime-feedstock-windows-policy

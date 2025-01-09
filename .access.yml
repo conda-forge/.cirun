@@ -129,10 +129,12 @@ access_control:
       - libmagma-feedstock-policy
       - pytorch-cpu-feedstock-policy
       - flash-attn-feedstock-policy
+      - tensorflow-feedstock-policy
   - resource: cirun-openstack-gpu-xlarge
     policies:
       - cf-autotick-bot-test-package-policy
       - pytorch-cpu-feedstock-policy
+      - tensorflow-feedstock-policy
   - resource: cirun-openstack-cpu-medium
     policies:
       - cf-autotick-bot-test-package-policy
@@ -150,6 +152,7 @@ access_control:
     policies:
       - cf-autotick-bot-test-package-policy
       - pytorch-cpu-feedstock-policy
+      - tensorflow-feedstock-policy
   - resource: cirun-openstack-gpu-4xlarge
     policies:
       - cf-autotick-bot-test-package-policy

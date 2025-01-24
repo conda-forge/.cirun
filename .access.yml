@@ -93,6 +93,7 @@ policies:
       - hmaarrfk
       - h-vetinari
       - isuruf
+      - mgorny
     pull_request: true
   - id: nodejs-feedstock-policy
     repo: nodejs-feedstock

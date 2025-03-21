@@ -94,6 +94,7 @@ policies:
       - h-vetinari
       - isuruf
       - mgorny
+      - jeongseok-meta
     pull_request: true
   - id: nodejs-feedstock-policy
     repo: nodejs-feedstock

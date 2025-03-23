@@ -96,6 +96,22 @@ policies:
       - mgorny
       - jeongseok-meta
     pull_request: true
+  - id: pytorch-cpu-feedstock-osx-m4-policy
+    repo: pytorch-cpu-feedstock
+    roles:
+      - admin
+      - maintain
+      - write
+    users:
+      - wolfv
+      - baszalmstra
+      - Tobias-Fischer
+      - hmaarrfk
+      - h-vetinari
+      - isuruf
+      - mgorny
+      - jeongseok-meta
+    pull_request: true
   - id: nodejs-feedstock-policy
     repo: nodejs-feedstock
     roles:
@@ -183,3 +199,6 @@ access_control:
     policies:
       - pytorch-cpu-feedstock-windows-policy
       - onnxruntime-feedstock-windows-policy
+  - resource: cirun-macos-m4-large
+    policies:
+      - pytorch-cpu-feedstock-osx-m4-policy

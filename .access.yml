@@ -56,6 +56,13 @@ policies:
       - write
     pull_request: true
     users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
+  - id: tensorflow-feedstock-osx-m4-policy
+    repo: tensorflow-feedstock
+    roles:
+      - admin
+      - maintain
+      - write
+    pull_request: true
   - id: mongodb-feedstock-policy
     repo: mongodb-feedstock
     roles:
@@ -81,22 +88,6 @@ policies:
     pull_request: true
     users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
   - id: pytorch-cpu-feedstock-windows-policy
-    repo: pytorch-cpu-feedstock
-    roles:
-      - admin
-      - maintain
-      - write
-    users:
-      - wolfv
-      - baszalmstra
-      - Tobias-Fischer
-      - hmaarrfk
-      - h-vetinari
-      - isuruf
-      - mgorny
-      - jeongseok-meta
-    pull_request: true
-  - id: pytorch-cpu-feedstock-osx-m4-policy
     repo: pytorch-cpu-feedstock
     roles:
       - admin
@@ -201,4 +192,4 @@ access_control:
       - onnxruntime-feedstock-windows-policy
   - resource: cirun-macos-m4-large
     policies:
-      - pytorch-cpu-feedstock-osx-m4-policy
+      - tensorflow-feedstock-osx-m4-policy

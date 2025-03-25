@@ -62,6 +62,14 @@ policies:
       - admin
       - maintain
       - write
+    users:
+      - h-vetinari
+      - hmaarrfk
+      - wolfv
+      - xhochy
+      - aktech
+      - jaimergp
+      - isuruf
     pull_request: true
   - id: mongodb-feedstock-policy
     repo: mongodb-feedstock

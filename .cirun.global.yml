@@ -143,3 +143,14 @@ runners:
       - cirun-azure-windows-4xlarge
     extra_config:
       licenseType: Windows_Server
+
+  - name: cirun-macos-m4-large
+    cloud: on_prem
+    # 8 cores, 8GB Ram, 75GB storage, M4
+    instance_type: 8vcpu-8gb-75gb
+    machine_image: "cirunlabs/macos-sequoia-runner:latest"
+    region: RegionOne
+    labels:
+      - osx
+      - arm64
+      - cirun-macos-m4-large

@@ -154,6 +154,15 @@ policies:
       - write
     pull_request: true
     users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
+  - id: pixi-pack-feedstock-osx-m4-policy
+    repo: pixi-pack-feedstock
+    roles:
+      - admin
+      - maintain
+      - write
+    users:
+      - pavelzw
+    pull_request: true
 access_control:
   - resource: cirun-openstack-gpu-large
     policies:
@@ -222,3 +231,4 @@ access_control:
   - resource: cirun-macos-m4-large
     policies:
       - temporalio-cli-feedstock-osx-m4-policy
+      - pixi-pack-feedstock-osx-m4-policy

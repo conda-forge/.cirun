@@ -163,6 +163,16 @@ policies:
     users:
       - pavelzw
     pull_request: true
+  - id: gstreamer-feedstock-osx-m4-policy
+    repo: gstreamer-feedstock
+    roles:
+      - admin
+      - maintain
+      - write
+    users:
+      - wolfv
+      - hmaarrfk
+    pull_request: true
 access_control:
   - resource: cirun-openstack-gpu-large
     policies:
@@ -228,7 +238,6 @@ access_control:
   - resource: cirun-macos-m4-large
     policies:
       - tensorflow-feedstock-osx-m4-policy
-  - resource: cirun-macos-m4-large
-    policies:
       - temporalio-cli-feedstock-osx-m4-policy
       - pixi-pack-feedstock-osx-m4-policy
+      - gstreamer-osx-m4-policy

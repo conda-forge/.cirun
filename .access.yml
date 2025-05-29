@@ -133,10 +133,8 @@ policies:
       - admin
       - maintain
       - write
-    users:
-      - cbourjau
-      - hmaarrfk
     pull_request: true
+    users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
   - id: temporalio-cli-feedstock-osx-m4-policy
     repo: temporalio-cli-feedstock
     roles:
@@ -199,6 +197,7 @@ access_control:
   - resource: cirun-openstack-cpu-medium
     policies:
       - cf-autotick-bot-test-package-policy
+      - onnxruntime-feedstock-windows-policy
   - resource: cirun-openstack-cpu-large
     policies:
       - cf-autotick-bot-test-package-policy
@@ -209,6 +208,7 @@ access_control:
       - jaxlib-feedstock-policy
       - nodejs-feedstock-policy
       - flash-attn-feedstock-policy
+      - onnxruntime-feedstock-windows-policy
   - resource: cirun-openstack-gpu-2xlarge
     policies:
       - cf-autotick-bot-test-package-policy
@@ -236,6 +236,7 @@ access_control:
       - xformers-feedstock-policy
       - mongodb-feedstock-policy
       - flash-attn-feedstock-policy
+      - onnxruntime-feedstock-windows-policy
   - resource: cirun-azure-windows-2xlarge
     policies:
       - pytorch-cpu-feedstock-windows-policy

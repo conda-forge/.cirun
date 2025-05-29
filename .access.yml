@@ -240,4 +240,4 @@ access_control:
       - tensorflow-feedstock-osx-m4-policy
       - temporalio-cli-feedstock-osx-m4-policy
       - pixi-pack-feedstock-osx-m4-policy
-      - gstreamer-osx-m4-policy
+      - gstreamer-feedstock-osx-m4-policy

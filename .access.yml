@@ -179,6 +179,14 @@ policies:
       - write
     pull_request: true
     users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
+  - id: muscat-split-feedstock-policy
+    repo: muscat-split-feedstock
+    roles:
+      - admin
+      - maintain
+      - write
+    pull_request: true
+    users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
 access_control:
   - resource: cirun-openstack-gpu-large
     policies:
@@ -189,6 +197,7 @@ access_control:
       - pytorch-cpu-feedstock-policy
       - flash-attn-feedstock-policy
       - tensorflow-feedstock-policy
+      - muscat-split-feedstock-policy
   - resource: cirun-openstack-gpu-xlarge
     policies:
       - cf-autotick-bot-test-package-policy

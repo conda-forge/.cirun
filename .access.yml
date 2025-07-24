@@ -111,6 +111,23 @@ policies:
       - mgorny
       - jeongseok-meta
     pull_request: true
+  - id: libmagma-feedstock-windows-policy
+    repo: libmagma-feedstock
+    roles:
+      - admin
+      - maintain
+      - write
+    users:
+      - baszalmstra
+      - carterbox
+      - h-vetinari
+      - hmaarrfk
+      - isuruf
+      - jeongseok-meta
+      - mgorny
+      - Tobias-Fischer
+      - wolfv
+    pull_request: true
   - id: nodejs-feedstock-policy
     repo: nodejs-feedstock
     roles:
@@ -258,10 +275,12 @@ access_control:
   - resource: cirun-azure-windows-2xlarge
     policies:
       - pytorch-cpu-feedstock-windows-policy
+      - libmagma-feedstock-windows-policy
       - onnxruntime-feedstock-windows-policy
   - resource: cirun-azure-windows-4xlarge
     policies:
       - pytorch-cpu-feedstock-windows-policy
+      - libmagma-feedstock-windows-policy
       - onnxruntime-feedstock-windows-policy
   - resource: cirun-macos-m4-large
     policies:

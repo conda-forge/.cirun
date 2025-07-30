@@ -252,6 +252,7 @@ access_control:
       - nodejs-feedstock-policy
       - flash-attn-feedstock-policy
       - onnxruntime-feedstock-windows-policy
+      - vllm-feedstock-policy
   - resource: cirun-openstack-gpu-2xlarge
     policies:
       - cf-autotick-bot-test-package-policy

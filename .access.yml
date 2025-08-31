@@ -228,6 +228,14 @@ policies:
       - write
     pull_request: true
     users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
+  - id: torchao-feedstock-policy
+    repo: torchao-feedstock
+    roles:
+      - admin
+      - maintain
+      - write
+    pull_request: true
+    users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
 access_control:
   - resource: cirun-openstack-gpu-large
     policies:
@@ -279,6 +287,7 @@ access_control:
       - vtk-m-feedstock-policy
       - vllm-feedstock-policy
       - webkit2gtk4.1-feedstock-policy
+      - torchao-feedstock-policy
   - resource: cirun-openstack-cpu-4xlarge
     policies:
       - cf-autotick-bot-test-package-policy

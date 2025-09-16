@@ -133,7 +133,7 @@ runners:
 
   - name: cirun-azure-windows-4xlarge
     cloud: azure
-    # 16 cores, 64GB Ram, 600GB storage, x64
+    # 16 cores, 64GB Ram, 1000GB storage, x64
     instance_type: Standard_D16ads_v5
     machine_image: "/subscriptions/df033e15-d7e5-43a0-88b8-95b833d272f9/resourceGroups/cirun-runner-images-via-packer/providers/Microsoft.Compute/images/cirun-win22-dev"
     region: uksouth
@@ -143,6 +143,9 @@ runners:
       - cirun-azure-windows-4xlarge
     extra_config:
       licenseType: Windows_Server
+      storageProfile:
+        osDisk:
+          diskSizeGB: 1000
 
   - name: cirun-macos-m4-large
     cloud: on_prem

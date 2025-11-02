@@ -281,6 +281,16 @@ access_control:
       - onnxruntime-feedstock-policy
       - vllm-feedstock-policy
       - torchao-feedstock-policy
+  - resource: cirun-openstack-cpu-xlarge
+    policies:
+      - cf-autotick-bot-test-package-policy
+      - tensorflow-feedstock-policy
+      - xformers-feedstock-policy
+      - mongodb-feedstock-policy
+      - flash-attn-feedstock-policy
+      - onnxruntime-feedstock-policy
+      - vllm-feedstock-policy
+      - torchao-feedstock-policy
   - resource: cirun-openstack-cpu-2xlarge
     policies:
       - cf-autotick-bot-test-package-policy
@@ -296,16 +306,6 @@ access_control:
       - tensorflow-feedstock-policy
       - ray-packages-feedstock-policy
       - vllm-feedstock-policy
-  - resource: cirun-openstack-cpu-xlarge
-    policies:
-      - cf-autotick-bot-test-package-policy
-      - tensorflow-feedstock-policy
-      - xformers-feedstock-policy
-      - mongodb-feedstock-policy
-      - flash-attn-feedstock-policy
-      - onnxruntime-feedstock-policy
-      - vllm-feedstock-policy
-      - torchao-feedstock-policy
   - resource: cirun-azure-windows-2xlarge
     policies:
       - pytorch-cpu-feedstock-windows-policy

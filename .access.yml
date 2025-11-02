@@ -144,7 +144,7 @@ policies:
       - write
     pull_request: true
     users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
-  - id: onnxruntime-feedstock-windows-policy
+  - id: onnxruntime-feedstock-policy
     repo: onnxruntime-feedstock
     roles:
       - admin
@@ -257,7 +257,7 @@ access_control:
   - resource: cirun-openstack-cpu-medium
     policies:
       - cf-autotick-bot-test-package-policy
-      - onnxruntime-feedstock-windows-policy
+      - onnxruntime-feedstock-policy
   - resource: cirun-openstack-cpu-large
     policies:
       - cf-autotick-bot-test-package-policy
@@ -268,7 +268,7 @@ access_control:
       - jaxlib-feedstock-policy
       - nodejs-feedstock-policy
       - flash-attn-feedstock-policy
-      - onnxruntime-feedstock-windows-policy
+      - onnxruntime-feedstock-policy
       - vllm-feedstock-policy
       - torchao-feedstock-policy
   - resource: cirun-openstack-gpu-2xlarge
@@ -303,19 +303,19 @@ access_control:
       - xformers-feedstock-policy
       - mongodb-feedstock-policy
       - flash-attn-feedstock-policy
-      - onnxruntime-feedstock-windows-policy
+      - onnxruntime-feedstock-policy
       - vllm-feedstock-policy
       - torchao-feedstock-policy
   - resource: cirun-azure-windows-2xlarge
     policies:
       - pytorch-cpu-feedstock-windows-policy
       - libmagma-feedstock-windows-policy
-      - onnxruntime-feedstock-windows-policy
+      - onnxruntime-feedstock-policy
   - resource: cirun-azure-windows-4xlarge
     policies:
       - pytorch-cpu-feedstock-windows-policy
       - libmagma-feedstock-windows-policy
-      - onnxruntime-feedstock-windows-policy
+      - onnxruntime-feedstock-policy
   - resource: cirun-macos-m4-large
     policies:
       - tensorflow-feedstock-osx-m4-policy

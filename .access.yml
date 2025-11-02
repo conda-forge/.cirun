@@ -237,6 +237,7 @@ policies:
     pull_request: true
     users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
 access_control:
+  # Linux: GPU
   - resource: cirun-openstack-gpu-large
     policies:
       - cf-autotick-bot-test-package-policy
@@ -264,6 +265,7 @@ access_control:
     policies:
       - cf-autotick-bot-test-package-policy
       - pytorch-cpu-feedstock-policy
+  # Linux: CPU
   - resource: cirun-openstack-cpu-medium
     policies:
       - cf-autotick-bot-test-package-policy
@@ -306,6 +308,7 @@ access_control:
       - tensorflow-feedstock-policy
       - ray-packages-feedstock-policy
       - vllm-feedstock-policy
+  # Windows
   - resource: cirun-azure-windows-2xlarge
     policies:
       - pytorch-cpu-feedstock-windows-policy
@@ -316,6 +319,7 @@ access_control:
       - pytorch-cpu-feedstock-windows-policy
       - libmagma-feedstock-windows-policy
       - onnxruntime-feedstock-policy
+  # OSX
   - resource: cirun-macos-m4-large
     policies:
       - tensorflow-feedstock-osx-m4-policy

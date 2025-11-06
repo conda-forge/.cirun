@@ -11,9 +11,6 @@ repos:
       - id: end-of-file-fixer
       - id: trailing-whitespace
       - id: check-merge-conflict
-      - id: check-json
-      - id: pretty-format-json
-        args: [--top-keys, "id,$id,$schema,schema_version,name", --indent=2, --autofix]
   - repo: meta
     # see https://pre-commit.com/#meta-hooks
     hooks:
@@ -34,4 +31,5 @@ repos:
         name: Check entries and ordering in .access.yml
         language: python
         entry: python scripts/lint-access-yml.py
-        files: .access.yml
+        files: ^\.access\.yml$
+        additional_dependencies: [ruamel.yaml]

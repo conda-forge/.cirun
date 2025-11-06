@@ -10,10 +10,6 @@ win = [f"cirun-azure-windows-{x}" for x in ["2xlarge", "4xlarge"]]
 expected_resources = gpu + cpu + win + ["cirun-macos-m4-large"]
 
 
-
-
-   
-   
 for path in sys.argv[1:]:
     with open(path, "r") as f:
         access_yaml = yaml.load(f)

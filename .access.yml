@@ -236,6 +236,22 @@ policies:
       - write
     pull_request: true
     users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
+  - id: pytorch-cpu-feedstock-osx-m4-policy
+    repo: pytorch-cpu-feedstock
+    roles:
+      - admin
+      - maintain
+      - write
+    users:
+      - wolfv
+      - baszalmstra
+      - Tobias-Fischer
+      - hmaarrfk
+      - h-vetinari
+      - isuruf
+      - mgorny
+      - jeongseok-meta
+    pull_request: true
 access_control:
   # Linux: GPU
   - resource: cirun-openstack-gpu-large
@@ -324,5 +340,6 @@ access_control:
     policies:
       - gstreamer-feedstock-osx-m4-policy
       - pixi-pack-feedstock-osx-m4-policy
+      - pytorch-cpu-feedstock-osx-m4-policy
       - temporalio-cli-feedstock-osx-m4-policy
       - tensorflow-feedstock-osx-m4-policy

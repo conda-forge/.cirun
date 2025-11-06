@@ -4,9 +4,12 @@ from ruamel.yaml import YAML
 
 yaml = YAML(typ="safe")
 
-with Path(".access.yml").open() as f:
-    access_yaml = yaml.load(f)
-resources = [resource["resource"] for resource in access_yaml["access_control"]]
+with Path(".cirun.global.yml").open() as f:
+    cirun_yaml = yaml.load(f)
+resources = [runner["name"] for runner in cirun_yaml["runners"]]
+
+if not resources:
+    raise ValueError("No configured resources?")
 
 for path in sys.argv[1:]:
     if not path.endswith("README.md"):

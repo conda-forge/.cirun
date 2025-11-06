@@ -154,6 +154,6 @@ runners:
     machine_image: "cirunlabs/macos-sequoia-runner:latest"
     region: RegionOne
     labels:
-      - osx
+      - macOS
       - arm64
       - cirun-macos-m4-large

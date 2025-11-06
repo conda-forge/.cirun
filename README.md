@@ -14,7 +14,9 @@ In order to request access, please refer to `conda-forge/admin-requests`.
 
 ### OpenStack instance
 
-Provided by [`open-gpu-server`](https://github.com/Quansight/open-gpu-server).
+Provides long-running CPU and GPU jobs for native `linux-64`.
+
+Provided by Quansight's [`open-gpu-server`](https://github.com/Quansight/open-gpu-server).
 Check their README for the technical specs of each flavor.
 
 | `name`                        | OpenStack flavor |
@@ -28,3 +30,24 @@ Check their README for the technical specs of each flavor.
 | `cirun-openstack-cpu-xlarge`  | `ci_xlarge`      |
 | `cirun-openstack-cpu-2xlarge` | `ci_2xlarge`     |
 | `cirun-openstack-cpu-4xlarge` | `ci_4xlarge`     |
+
+### Windows runners
+
+Long-running CPU jobs for native `win-64`.
+
+Provided by Prefix.dev-sponsored Azure instances.
+
+| `name`                          | Azure instance        |
+| ------------------------------- | --------------------- |
+| `cirun-azure-windows-2xlarge`   | `Standard_D8ads_v5`   |
+| `cirun-azure-windows-4xlarge`   | `Standard_D16ads_v5`  |
+
+### macOS runners
+
+Long-running CPU jobs for native `osx-arm64`.
+
+Provided by Prefix.dev-sponsored Scaleway instances.
+
+| `name`                 | Scaleway instance |
+| ---------------------- | ----------------- |
+| `cirun-macos-m4-large` | `8vcpu-8gb-75gb`  |

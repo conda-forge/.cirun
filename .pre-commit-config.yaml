@@ -1,0 +1,35 @@
+# disable autofixing PRs, commenting "pre-commit.ci autofix" on a pull request triggers a autofix
+ci:
+  autofix_prs: false
+repos:
+  # generic verification and formatting
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
+    hooks:
+      # standard end of line/end of file cleanup
+      - id: mixed-line-ending
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+      - id: check-merge-conflict
+  - repo: meta
+    # see https://pre-commit.com/#meta-hooks
+    hooks:
+      - id: check-hooks-apply
+      - id: check-useless-excludes
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    # Ruff version.
+    rev: v0.14.2
+    hooks:
+      # Run the linter.
+      - id: ruff
+        args: [ --fix ]
+      # Run the formatter.
+      - id: ruff-format
+  - repo: local
+    hooks:
+      - id: lint-access-yml
+        name: Check entries and ordering in .access.yml
+        language: python
+        entry: python scripts/lint-access-yml.py
+        files: ^\.access\.yml$
+        additional_dependencies: [ruamel.yaml]

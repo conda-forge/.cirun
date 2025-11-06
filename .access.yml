@@ -144,7 +144,7 @@ policies:
       - write
     pull_request: true
     users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
-  - id: onnxruntime-feedstock-windows-policy
+  - id: onnxruntime-feedstock-policy
     repo: onnxruntime-feedstock
     roles:
       - admin
@@ -237,40 +237,24 @@ policies:
     pull_request: true
     users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
 access_control:
+  # Linux: GPU
   - resource: cirun-openstack-gpu-large
     policies:
-      - cf-autotick-bot-test-package-policy
-      - conda-smithy-feedstock-policy
-      - conda-forge-ci-setup-feedstock-policy
-      - libmagma-feedstock-policy
-      - pytorch-cpu-feedstock-policy
-      - flash-attn-feedstock-policy
-      - tensorflow-feedstock-policy
-      - muscat-split-feedstock-policy
       - astra-toolbox-feedstock-policy
+      - cf-autotick-bot-test-package-policy
+      - conda-forge-ci-setup-feedstock-policy
+      - conda-smithy-feedstock-policy
+      - flash-attn-feedstock-policy
+      - libmagma-feedstock-policy
+      - muscat-split-feedstock-policy
+      - pytorch-cpu-feedstock-policy
+      - tensorflow-feedstock-policy
       - torchao-feedstock-policy
   - resource: cirun-openstack-gpu-xlarge
     policies:
       - cf-autotick-bot-test-package-policy
       - pytorch-cpu-feedstock-policy
       - tensorflow-feedstock-policy
-  - resource: cirun-openstack-cpu-medium
-    policies:
-      - cf-autotick-bot-test-package-policy
-      - onnxruntime-feedstock-windows-policy
-  - resource: cirun-openstack-cpu-large
-    policies:
-      - cf-autotick-bot-test-package-policy
-      - pytorch-cpu-feedstock-policy
-      - cutlass-feedstock-policy
-      - tensorflow-feedstock-policy
-      - mongodb-feedstock-policy
-      - jaxlib-feedstock-policy
-      - nodejs-feedstock-policy
-      - flash-attn-feedstock-policy
-      - onnxruntime-feedstock-windows-policy
-      - vllm-feedstock-policy
-      - torchao-feedstock-policy
   - resource: cirun-openstack-gpu-2xlarge
     policies:
       - cf-autotick-bot-test-package-policy
@@ -281,44 +265,64 @@ access_control:
     policies:
       - cf-autotick-bot-test-package-policy
       - pytorch-cpu-feedstock-policy
+  # Linux: CPU
+  - resource: cirun-openstack-cpu-medium
+    policies:
+      - cf-autotick-bot-test-package-policy
+      - onnxruntime-feedstock-policy
+  - resource: cirun-openstack-cpu-large
+    policies:
+      - cf-autotick-bot-test-package-policy
+      - cutlass-feedstock-policy
+      - flash-attn-feedstock-policy
+      - jaxlib-feedstock-policy
+      - mongodb-feedstock-policy
+      - nodejs-feedstock-policy
+      - onnxruntime-feedstock-policy
+      - pytorch-cpu-feedstock-policy
+      - tensorflow-feedstock-policy
+      - torchao-feedstock-policy
+      - vllm-feedstock-policy
+  - resource: cirun-openstack-cpu-xlarge
+    policies:
+      - cf-autotick-bot-test-package-policy
+      - flash-attn-feedstock-policy
+      - mongodb-feedstock-policy
+      - onnxruntime-feedstock-policy
+      - tensorflow-feedstock-policy
+      - torchao-feedstock-policy
+      - vllm-feedstock-policy
+      - xformers-feedstock-policy
   - resource: cirun-openstack-cpu-2xlarge
     policies:
       - cf-autotick-bot-test-package-policy
       - jaxlib-feedstock-policy
       - tensorflow-feedstock-policy
-      - vtk-m-feedstock-policy
-      - vllm-feedstock-policy
-      - webkit2gtk4.1-feedstock-policy
       - torchao-feedstock-policy
+      - vllm-feedstock-policy
+      - vtk-m-feedstock-policy
+      - webkit2gtk4.1-feedstock-policy
   - resource: cirun-openstack-cpu-4xlarge
     policies:
       - cf-autotick-bot-test-package-policy
-      - tensorflow-feedstock-policy
       - ray-packages-feedstock-policy
-      - vllm-feedstock-policy
-  - resource: cirun-openstack-cpu-xlarge
-    policies:
-      - cf-autotick-bot-test-package-policy
       - tensorflow-feedstock-policy
-      - xformers-feedstock-policy
-      - mongodb-feedstock-policy
-      - flash-attn-feedstock-policy
-      - onnxruntime-feedstock-windows-policy
       - vllm-feedstock-policy
-      - torchao-feedstock-policy
+  # Windows
   - resource: cirun-azure-windows-2xlarge
     policies:
-      - pytorch-cpu-feedstock-windows-policy
       - libmagma-feedstock-windows-policy
-      - onnxruntime-feedstock-windows-policy
+      - onnxruntime-feedstock-policy
+      - pytorch-cpu-feedstock-windows-policy
   - resource: cirun-azure-windows-4xlarge
     policies:
-      - pytorch-cpu-feedstock-windows-policy
       - libmagma-feedstock-windows-policy
-      - onnxruntime-feedstock-windows-policy
+      - onnxruntime-feedstock-policy
+      - pytorch-cpu-feedstock-windows-policy
+  # OSX
   - resource: cirun-macos-m4-large
     policies:
-      - tensorflow-feedstock-osx-m4-policy
-      - temporalio-cli-feedstock-osx-m4-policy
-      - pixi-pack-feedstock-osx-m4-policy
       - gstreamer-feedstock-osx-m4-policy
+      - pixi-pack-feedstock-osx-m4-policy
+      - temporalio-cli-feedstock-osx-m4-policy
+      - tensorflow-feedstock-osx-m4-policy

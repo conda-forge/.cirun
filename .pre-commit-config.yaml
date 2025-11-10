@@ -33,3 +33,9 @@ repos:
         entry: python scripts/lint-access-yml.py
         files: ^\.access\.yml$
         additional_dependencies: [ruamel.yaml]
+      - id: lint-access-yml
+        name: Check resources are documented in README
+        language: python
+        entry: python scripts/lint-readme-md.py
+        files: ^README\.md$
+        additional_dependencies: [ruamel.yaml]

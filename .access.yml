@@ -297,6 +297,7 @@ access_control:
     policies:
       - cf-autotick-bot-test-package-policy
       - jaxlib-feedstock-policy
+      - onnxruntime-feedstock-policy
       - tensorflow-feedstock-policy
       - torchao-feedstock-policy
       - vllm-feedstock-policy

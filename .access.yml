@@ -299,6 +299,7 @@ access_control:
       - jaxlib-feedstock-policy
       - tensorflow-feedstock-policy
       - torchao-feedstock-policy
+      - onnxruntime-feedstock-policy
       - vllm-feedstock-policy
       - vtk-m-feedstock-policy
       - webkit2gtk4.1-feedstock-policy

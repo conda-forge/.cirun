@@ -288,10 +288,10 @@ access_control:
       - nodejs-feedstock-policy
       - onnxruntime-feedstock-policy
       - pytorch-cpu-feedstock-gpu-policy
+      - pytorch-scatter-feedstock-policy
       - tensorflow-feedstock-policy
       - torchao-feedstock-policy
       - vllm-feedstock-policy
-      - pytorch-scatter-feedstock-policy
   - resource: cirun-openstack-cpu-xlarge
     policies:
       - cf-autotick-bot-test-package-policy

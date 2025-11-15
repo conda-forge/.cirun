@@ -315,6 +315,7 @@ access_control:
   - resource: cirun-openstack-cpu-4xlarge
     policies:
       - cf-autotick-bot-test-package-policy
+      - onnxruntime-feedstock-policy
       - ray-packages-feedstock-policy
       - tensorflow-feedstock-policy
       - vllm-feedstock-policy

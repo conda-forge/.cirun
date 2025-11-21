@@ -149,9 +149,9 @@ runners:
 
   - name: cirun-macos-m4-large
     cloud: on_prem
-    # 8 cores, 8GB Ram, 75GB storage, M4
-    instance_type: 8vcpu-8gb-75gb
-    machine_image: "cirunlabs/macos-sequoia-runner:latest"
+    # 8 cores, 8GB Ram, 100GB storage, M4
+    instance_type: 8vcpu-8gb-100gb
+    machine_image: "cirunlabs/macos-sequoia-xcode:16.4"
     region: RegionOne
     labels:
       - macOS

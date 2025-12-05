@@ -156,15 +156,6 @@ policies:
       - write
     pull_request: true
     users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
-  - id: temporalio-cli-feedstock-osx-m4-policy
-    repo: temporalio-cli-feedstock
-    roles:
-      - admin
-      - maintain
-      - write
-    users:
-      - wolfv
-    pull_request: true
   - id: ray-packages-feedstock-policy
     repo: ray-packages-feedstock
     roles:
@@ -181,6 +172,15 @@ policies:
       - write
     pull_request: true
     users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
+  - id: temporalio-cli-feedstock-osx-m4-policy
+    repo: temporalio-cli-feedstock
+    roles:
+      - admin
+      - maintain
+      - write
+    users:
+      - wolfv
+    pull_request: true
   - id: tensorflow-feedstock-osx-m4-policy
     repo: tensorflow-feedstock
     roles:

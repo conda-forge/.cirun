@@ -91,6 +91,14 @@ policies:
       - Tobias-Fischer
       - wolfv
     pull_request: true
+  - id: mongodb-feedstock-policy
+    repo: mongodb-feedstock
+    roles:
+      - admin
+      - maintain
+      - write
+    pull_request: true
+    users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
   - id: tensorflow-feedstock-policy
     repo: tensorflow-feedstock
     roles:
@@ -114,14 +122,6 @@ policies:
       - jaimergp
       - isuruf
     pull_request: true
-  - id: mongodb-feedstock-policy
-    repo: mongodb-feedstock
-    roles:
-      - admin
-      - maintain
-      - write
-    pull_request: true
-    users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
   - id: xformers-feedstock-policy
     repo: xformers-feedstock
     roles:

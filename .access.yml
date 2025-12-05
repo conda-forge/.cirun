@@ -1,13 +1,5 @@
 version: 1
 policies:
-  - id: cf-autotick-bot-test-package-policy
-    repo: cf-autotick-bot-test-package-feedstock
-    roles:
-      - admin
-      - maintain
-      - write
-    pull_request: true
-    users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
   - id: conda-smithy-feedstock-policy
     repo: conda-smithy-feedstock
     roles:
@@ -18,6 +10,14 @@ policies:
     users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
   - id: astra-toolbox-feedstock-policy
     repo: astra-toolbox-feedstock
+    roles:
+      - admin
+      - maintain
+      - write
+    pull_request: true
+    users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
+  - id: cf-autotick-bot-test-package-policy
+    repo: cf-autotick-bot-test-package-feedstock
     roles:
       - admin
       - maintain

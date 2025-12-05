@@ -1,13 +1,5 @@
 version: 1
 policies:
-  - id: conda-smithy-feedstock-policy
-    repo: conda-smithy-feedstock
-    roles:
-      - admin
-      - maintain
-      - write
-    pull_request: false
-    users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
   - id: astra-toolbox-feedstock-policy
     repo: astra-toolbox-feedstock
     roles:
@@ -26,6 +18,14 @@ policies:
     users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
   - id: conda-forge-ci-setup-feedstock-policy
     repo: conda-forge-ci-setup-feedstock
+    roles:
+      - admin
+      - maintain
+      - write
+    pull_request: false
+    users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
+  - id: conda-smithy-feedstock-policy
+    repo: conda-smithy-feedstock
     roles:
       - admin
       - maintain

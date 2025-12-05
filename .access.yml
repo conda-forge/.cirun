@@ -1,5 +1,13 @@
 version: 1
 policies:
+  - id: astra-toolbox-feedstock-policy
+    repo: astra-toolbox-feedstock
+    roles:
+      - admin
+      - maintain
+      - write
+    pull_request: true
+    users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
   - id: cf-autotick-bot-test-package-policy
     repo: cf-autotick-bot-test-package-feedstock
     roles:
@@ -7,14 +15,6 @@ policies:
       - maintain
       - write
     pull_request: true
-    users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
-  - id: conda-smithy-feedstock-policy
-    repo: conda-smithy-feedstock
-    roles:
-      - admin
-      - maintain
-      - write
-    pull_request: false
     users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
   - id: conda-forge-ci-setup-feedstock-policy
     repo: conda-forge-ci-setup-feedstock
@@ -24,21 +24,13 @@ policies:
       - write
     pull_request: false
     users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
-  - id: libmagma-feedstock-policy
-    repo: libmagma-feedstock
+  - id: conda-smithy-feedstock-policy
+    repo: conda-smithy-feedstock
     roles:
       - admin
       - maintain
       - write
-    pull_request: true
-    users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
-  - id: pytorch-cpu-feedstock-gpu-policy
-    repo: pytorch-cpu-feedstock
-    roles:
-      - admin
-      - maintain
-      - write
-    pull_request: true
+    pull_request: false
     users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
   - id: cutlass-feedstock-policy
     repo: cutlass-feedstock
@@ -48,37 +40,24 @@ policies:
       - write
     pull_request: true
     users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
-  - id: tensorflow-feedstock-policy
-    repo: tensorflow-feedstock
+  - id: flash-attn-feedstock-policy
+    repo: flash-attn-feedstock
     roles:
       - admin
       - maintain
       - write
     pull_request: true
     users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
-  - id: tensorflow-feedstock-osx-m4-policy
-    repo: tensorflow-feedstock
+  - id: gstreamer-feedstock-osx-m4-policy
+    repo: gstreamer-feedstock
     roles:
       - admin
       - maintain
       - write
     users:
-      - h-vetinari
-      - hmaarrfk
       - wolfv
-      - xhochy
-      - aktech
-      - jaimergp
-      - isuruf
+      - hmaarrfk
     pull_request: true
-  - id: mongodb-feedstock-policy
-    repo: mongodb-feedstock
-    roles:
-      - admin
-      - maintain
-      - write
-    pull_request: true
-    users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
   - id: jaxlib-feedstock-policy
     repo: jaxlib-feedstock
     roles:
@@ -87,30 +66,14 @@ policies:
       - write
     pull_request: true
     users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
-  - id: xformers-feedstock-policy
-    repo: xformers-feedstock
+  - id: libmagma-feedstock-policy
+    repo: libmagma-feedstock
     roles:
       - admin
       - maintain
       - write
     pull_request: true
     users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
-  - id: pytorch-cpu-feedstock-cpu-policy
-    repo: pytorch-cpu-feedstock
-    roles:
-      - admin
-      - maintain
-      - write
-    users:
-      - wolfv
-      - baszalmstra
-      - Tobias-Fischer
-      - hmaarrfk
-      - h-vetinari
-      - isuruf
-      - mgorny
-      - jeongseok-meta
-    pull_request: true
   - id: libmagma-feedstock-windows-policy
     repo: libmagma-feedstock
     roles:
@@ -128,6 +91,22 @@ policies:
       - Tobias-Fischer
       - wolfv
     pull_request: true
+  - id: mongodb-feedstock-policy
+    repo: mongodb-feedstock
+    roles:
+      - admin
+      - maintain
+      - write
+    pull_request: true
+    users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
+  - id: muscat-split-feedstock-policy
+    repo: muscat-split-feedstock
+    roles:
+      - admin
+      - maintain
+      - write
+    pull_request: true
+    users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
   - id: nodejs-feedstock-policy
     repo: nodejs-feedstock
     roles:
@@ -136,33 +115,8 @@ policies:
       - write
     pull_request: true
     users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
-  - id: flash-attn-feedstock-policy
-    repo: flash-attn-feedstock
-    roles:
-      - admin
-      - maintain
-      - write
-    pull_request: true
-    users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
   - id: onnxruntime-feedstock-policy
     repo: onnxruntime-feedstock
-    roles:
-      - admin
-      - maintain
-      - write
-    pull_request: true
-    users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
-  - id: temporalio-cli-feedstock-osx-m4-policy
-    repo: temporalio-cli-feedstock
-    roles:
-      - admin
-      - maintain
-      - write
-    users:
-      - wolfv
-    pull_request: true
-  - id: ray-packages-feedstock-policy
-    repo: ray-packages-feedstock
     roles:
       - admin
       - maintain
@@ -178,50 +132,72 @@ policies:
     users:
       - pavelzw
     pull_request: true
-  - id: gstreamer-feedstock-osx-m4-policy
-    repo: gstreamer-feedstock
+  - id: pytorch-cpu-feedstock-cpu-policy
+    repo: pytorch-cpu-feedstock
     roles:
       - admin
       - maintain
       - write
     users:
       - wolfv
+      - baszalmstra
+      - Tobias-Fischer
       - hmaarrfk
+      - h-vetinari
+      - isuruf
+      - mgorny
+      - jeongseok-meta
     pull_request: true
-  - id: vtk-m-feedstock-policy
-    repo: vtk-m-feedstock
+  - id: pytorch-cpu-feedstock-gpu-policy
+    repo: pytorch-cpu-feedstock
     roles:
       - admin
       - maintain
       - write
     pull_request: true
     users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
-  - id: muscat-split-feedstock-policy
-    repo: muscat-split-feedstock
+  - id: pytorch-scatter-feedstock-policy
+    repo: pytorch_scatter-feedstock
     roles:
       - admin
       - maintain
       - write
     pull_request: true
     users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
-  - id: astra-toolbox-feedstock-policy
-    repo: astra-toolbox-feedstock
+  - id: ray-packages-feedstock-policy
+    repo: ray-packages-feedstock
     roles:
       - admin
       - maintain
       - write
     pull_request: true
     users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
-  - id: vllm-feedstock-policy
-    repo: vllm-feedstock
+  - id: temporalio-cli-feedstock-osx-m4-policy
+    repo: temporalio-cli-feedstock
     roles:
       - admin
       - maintain
       - write
+    users:
+      - wolfv
     pull_request: true
-    users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
-  - id: webkit2gtk4.1-feedstock-policy
-    repo: webkit2gtk4.1-feedstock
+  - id: tensorflow-feedstock-osx-m4-policy
+    repo: tensorflow-feedstock
+    roles:
+      - admin
+      - maintain
+      - write
+    users:
+      - h-vetinari
+      - hmaarrfk
+      - wolfv
+      - xhochy
+      - aktech
+      - jaimergp
+      - isuruf
+    pull_request: true
+  - id: tensorflow-feedstock-policy
+    repo: tensorflow-feedstock
     roles:
       - admin
       - maintain
@@ -236,8 +212,32 @@ policies:
       - write
     pull_request: true
     users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
-  - id: pytorch-scatter-feedstock-policy
-    repo: pytorch_scatter-feedstock
+  - id: vllm-feedstock-policy
+    repo: vllm-feedstock
+    roles:
+      - admin
+      - maintain
+      - write
+    pull_request: true
+    users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
+  - id: vtk-m-feedstock-policy
+    repo: vtk-m-feedstock
+    roles:
+      - admin
+      - maintain
+      - write
+    pull_request: true
+    users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
+  - id: webkit2gtk4.1-feedstock-policy
+    repo: webkit2gtk4.1-feedstock
+    roles:
+      - admin
+      - maintain
+      - write
+    pull_request: true
+    users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
+  - id: xformers-feedstock-policy
+    repo: xformers-feedstock
     roles:
       - admin
       - maintain

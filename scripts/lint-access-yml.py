@@ -12,6 +12,9 @@ expected_resources = gpu + cpu + win + ["cirun-macos-m4-large"]
 for path in sys.argv[1:]:
     with open(path, "r") as f:
         access_yaml = yaml.load(f)
+    # check policies are defined alphabetically
+    policies = [x["id"] for x in access_yaml["policies"]]
+    assert policies == sorted(policies)
     # check resources (and their order) match expectations
     assert [x["resource"] for x in access_yaml["access_control"]] == expected_resources
     # check policies within a resource are ordered

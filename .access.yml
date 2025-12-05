@@ -164,14 +164,6 @@ policies:
       - write
     pull_request: true
     users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
-  - id: torchao-feedstock-policy
-    repo: torchao-feedstock
-    roles:
-      - admin
-      - maintain
-      - write
-    pull_request: true
-    users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
   - id: ray-packages-feedstock-policy
     repo: ray-packages-feedstock
     roles:
@@ -206,6 +198,14 @@ policies:
     pull_request: true
   - id: tensorflow-feedstock-policy
     repo: tensorflow-feedstock
+    roles:
+      - admin
+      - maintain
+      - write
+    pull_request: true
+    users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
+  - id: torchao-feedstock-policy
+    repo: torchao-feedstock
     roles:
       - admin
       - maintain

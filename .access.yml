@@ -172,14 +172,6 @@ policies:
       - write
     pull_request: true
     users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
-  - id: vtk-m-feedstock-policy
-    repo: vtk-m-feedstock
-    roles:
-      - admin
-      - maintain
-      - write
-    pull_request: true
-    users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
   - id: temporalio-cli-feedstock-osx-m4-policy
     repo: temporalio-cli-feedstock
     roles:
@@ -214,6 +206,14 @@ policies:
     users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
   - id: vllm-feedstock-policy
     repo: vllm-feedstock
+    roles:
+      - admin
+      - maintain
+      - write
+    pull_request: true
+    users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
+  - id: vtk-m-feedstock-policy
+    repo: vtk-m-feedstock
     roles:
       - admin
       - maintain

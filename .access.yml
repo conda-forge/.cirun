@@ -107,6 +107,22 @@ policies:
       - write
     pull_request: true
     users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
+  - id: nodejs-feedstock-policy
+    repo: nodejs-feedstock
+    roles:
+      - admin
+      - maintain
+      - write
+    pull_request: true
+    users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
+  - id: onnxruntime-feedstock-policy
+    repo: onnxruntime-feedstock
+    roles:
+      - admin
+      - maintain
+      - write
+    pull_request: true
+    users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
   - id: tensorflow-feedstock-policy
     repo: tensorflow-feedstock
     roles:
@@ -156,22 +172,6 @@ policies:
     pull_request: true
   - id: pytorch-cpu-feedstock-gpu-policy
     repo: pytorch-cpu-feedstock
-    roles:
-      - admin
-      - maintain
-      - write
-    pull_request: true
-    users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
-  - id: nodejs-feedstock-policy
-    repo: nodejs-feedstock
-    roles:
-      - admin
-      - maintain
-      - write
-    pull_request: true
-    users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
-  - id: onnxruntime-feedstock-policy
-    repo: onnxruntime-feedstock
     roles:
       - admin
       - maintain

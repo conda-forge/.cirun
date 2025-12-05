@@ -48,6 +48,16 @@ policies:
       - write
     pull_request: true
     users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
+  - id: gstreamer-feedstock-osx-m4-policy
+    repo: gstreamer-feedstock
+    roles:
+      - admin
+      - maintain
+      - write
+    users:
+      - wolfv
+      - hmaarrfk
+    pull_request: true
   - id: tensorflow-feedstock-policy
     repo: tensorflow-feedstock
     roles:
@@ -185,16 +195,6 @@ policies:
       - write
     users:
       - pavelzw
-    pull_request: true
-  - id: gstreamer-feedstock-osx-m4-policy
-    repo: gstreamer-feedstock
-    roles:
-      - admin
-      - maintain
-      - write
-    users:
-      - wolfv
-      - hmaarrfk
     pull_request: true
   - id: vtk-m-feedstock-policy
     repo: vtk-m-feedstock

@@ -123,6 +123,15 @@ policies:
       - write
     pull_request: true
     users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
+  - id: pixi-pack-feedstock-osx-m4-policy
+    repo: pixi-pack-feedstock
+    roles:
+      - admin
+      - maintain
+      - write
+    users:
+      - pavelzw
+    pull_request: true
   - id: tensorflow-feedstock-policy
     repo: tensorflow-feedstock
     roles:
@@ -195,15 +204,6 @@ policies:
       - write
     pull_request: true
     users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
-  - id: pixi-pack-feedstock-osx-m4-policy
-    repo: pixi-pack-feedstock
-    roles:
-      - admin
-      - maintain
-      - write
-    users:
-      - pavelzw
-    pull_request: true
   - id: vtk-m-feedstock-policy
     repo: vtk-m-feedstock
     roles:

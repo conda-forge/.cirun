@@ -212,6 +212,14 @@ policies:
       - write
     pull_request: true
     users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
+  - id: viskores-feedstock-policy
+    repo: viskores-feedstock
+    roles:
+      - admin
+      - maintain
+      - write
+    pull_request: true
+    users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
   - id: vllm-feedstock-policy
     repo: vllm-feedstock
     roles:
@@ -269,6 +277,7 @@ access_control:
       - pytorch-cpu-feedstock-gpu-policy
       - tensorflow-feedstock-policy
       - vllm-feedstock-policy
+      - viskores-feedstock-policy
   - resource: cirun-openstack-gpu-4xlarge
     policies:
       - cf-autotick-bot-test-package-policy

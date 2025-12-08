@@ -276,8 +276,8 @@ access_control:
       - cf-autotick-bot-test-package-policy
       - pytorch-cpu-feedstock-gpu-policy
       - tensorflow-feedstock-policy
-      - vllm-feedstock-policy
       - viskores-feedstock-policy
+      - vllm-feedstock-policy
   - resource: cirun-openstack-gpu-4xlarge
     policies:
       - cf-autotick-bot-test-package-policy

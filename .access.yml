@@ -328,6 +328,7 @@ access_control:
       - flash-attn-feedstock-policy
       - mongodb-feedstock-policy
       - onnxruntime-feedstock-policy
+      - qt-webengine-feedstock-policy
       - tensorflow-feedstock-policy
       - torchao-feedstock-policy
       - vllm-feedstock-policy

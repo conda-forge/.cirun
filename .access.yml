@@ -329,6 +329,7 @@ access_control:
       - flash-attn-feedstock-policy
       - mongodb-feedstock-policy
       - onnxruntime-feedstock-policy
+      - pytorch-cpu-feedstock-gpu-policy
       - qt-webengine-feedstock-policy
       - tensorflow-feedstock-policy
       - torchao-feedstock-policy
@@ -340,6 +341,7 @@ access_control:
       - cf-autotick-bot-test-package-policy
       - jaxlib-feedstock-policy
       - onnxruntime-feedstock-policy
+      - pytorch-cpu-feedstock-gpu-policy
       - tensorflow-feedstock-policy
       - torchao-feedstock-policy
       - viskores-feedstock-policy

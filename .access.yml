@@ -371,6 +371,7 @@ access_control:
   - resource: cirun-macos-m4-large
     policies:
       - gstreamer-feedstock-osx-m4-policy
+      - nodejs-feedstock-policy
       - pixi-pack-feedstock-osx-m4-policy
       - pytorch-cpu-feedstock-cpu-policy
       - temporalio-cli-feedstock-osx-m4-policy

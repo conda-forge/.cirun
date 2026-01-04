@@ -294,6 +294,7 @@ access_control:
       - muscat-split-feedstock-policy
       - pytorch-cpu-feedstock-gpu-policy
       - tensorflow-feedstock-policy
+      - tinygrad-feedstock-policy
       - torchao-feedstock-policy
   - resource: cirun-openstack-gpu-xlarge
     policies:

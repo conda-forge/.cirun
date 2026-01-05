@@ -372,6 +372,7 @@ access_control:
       - onnxruntime-feedstock-policy
       - openvino-feedstock-windows-policy
       - pytorch-cpu-feedstock-cpu-policy
+      - tinygrad-feedstock-policy
   - resource: cirun-azure-windows-4xlarge
     policies:
       - libmagma-feedstock-windows-policy

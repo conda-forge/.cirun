@@ -16,6 +16,18 @@ policies:
       - write
     pull_request: true
     users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
+  - id: clangdev-feedstock-policy
+    repo: clangdev-feedstock
+    pull_request: true
+    roles:
+      - admin
+      - maintain
+      - write
+    users:
+      - chrisburr
+      - h-vetinari
+      - isuruf
+      - xhochy
   - id: conda-forge-ci-setup-feedstock-policy
     repo: conda-forge-ci-setup-feedstock
     roles:
@@ -91,6 +103,18 @@ policies:
       - Tobias-Fischer
       - wolfv
     pull_request: true
+  - id: llvmdev-feedstock-policy
+    repo: llvmdev-feedstock
+    pull_request: true
+    roles:
+      - admin
+      - maintain
+      - write
+    users:
+      - chrisburr
+      - h-vetinari
+      - isuruf
+      - xhochy
   - id: mongodb-feedstock-policy
     repo: mongodb-feedstock
     roles:
@@ -368,7 +392,9 @@ access_control:
   # Windows
   - resource: cirun-azure-windows-2xlarge
     policies:
+      - clangdev-feedstock-policy
       - libmagma-feedstock-windows-policy
+      - llvmdev-feedstock-policy
       - onnxruntime-feedstock-policy
       - openvino-feedstock-windows-policy
       - pytorch-cpu-feedstock-cpu-policy

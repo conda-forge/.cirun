@@ -7,7 +7,7 @@ runners:
     # Instance type refers to flavors in openstack
     instance_type: gpu_large
     # The machine image to use for creating VM
-    machine_image: ubuntu-2404-gpu-20251109-221857
+    machine_image: ubuntu-2404-gpu-20260128-080143
     region: RegionOne
     labels:
       - linux
@@ -20,7 +20,7 @@ runners:
     # Instance type refers to flavors in openstack
     instance_type: gpu_xlarge
     # The machine image to use for creating VM
-    machine_image: ubuntu-2404-gpu-20251109-221857
+    machine_image: ubuntu-2404-gpu-20260128-080143
     region: RegionOne
     labels:
       - linux
@@ -33,7 +33,7 @@ runners:
     # Instance type refers to flavors in openstack
     instance_type: gpu_2xlarge
     # The machine image to use for creating VM
-    machine_image: ubuntu-2404-gpu-20251109-221857
+    machine_image: ubuntu-2404-gpu-20260128-080143
     region: RegionOne
     labels:
       - linux
@@ -46,7 +46,7 @@ runners:
     # Instance type refers to flavors in openstack
     instance_type: gpu_4xlarge
     # The machine image to use for creating VM
-    machine_image: ubuntu-2404-gpu-20251109-221857
+    machine_image: ubuntu-2404-gpu-20260128-080143
     region: RegionOne
     labels:
       - linux
@@ -59,7 +59,7 @@ runners:
     # Instance type refers to flavors in openstack
     instance_type: ci_medium
     # The machine image to use for creating VM
-    machine_image: ubuntu-2404-cpu-20251109-221335
+    machine_image: ubuntu-2404-cpu-20260128-075334
     region: RegionOne
     labels:
       - linux
@@ -72,7 +72,7 @@ runners:
     # Instance type refers to flavors in openstack
     instance_type: ci_large
     # The machine image to use for creating VM
-    machine_image: ubuntu-2404-cpu-20251109-221335
+    machine_image: ubuntu-2404-cpu-20260128-075334
     region: RegionOne
     labels:
       - linux
@@ -85,7 +85,7 @@ runners:
     # Instance type refers to flavors in openstack
     instance_type: ci_xlarge
     # The machine image to use for creating VM
-    machine_image: ubuntu-2404-cpu-20251109-221335
+    machine_image: ubuntu-2404-cpu-20260128-075334
     region: RegionOne
     labels:
       - linux
@@ -98,7 +98,7 @@ runners:
     # Instance type refers to flavors in openstack
     instance_type: ci_2xlarge
     # The machine image to use for creating VM
-    machine_image: ubuntu-2404-cpu-20251109-221335
+    machine_image: ubuntu-2404-cpu-20260128-075334
     region: RegionOne
     labels:
       - linux
@@ -111,7 +111,7 @@ runners:
     # Instance type refers to flavors in openstack
     instance_type: ci_4xlarge
     # The machine image to use for creating VM
-    machine_image: ubuntu-2404-cpu-20251109-221335
+    machine_image: ubuntu-2404-cpu-20260128-075334
     region: RegionOne
     labels:
       - linux

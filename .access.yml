@@ -354,6 +354,7 @@ access_control:
       - pytorch-cpu-feedstock-gpu-policy
       - pytorch-scatter-feedstock-policy
       - tensorflow-feedstock-policy
+      - tinygrad-feedstock-policy
       - torchao-feedstock-policy
       - viskores-feedstock-policy
       - vllm-feedstock-policy

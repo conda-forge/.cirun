@@ -330,6 +330,7 @@ access_control:
       - cf-autotick-bot-test-package-policy
       - pytorch-cpu-feedstock-gpu-policy
       - tensorflow-feedstock-policy
+      - tinygrad-feedstock-policy
       - viskores-feedstock-policy
       - vllm-feedstock-policy
   - resource: cirun-openstack-gpu-4xlarge

@@ -168,30 +168,26 @@ policies:
     users:
       - pavelzw
     pull_request: true
-  - id: pytorch-cpu-feedstock-cpu-policy
+  # unified policy; not reflecting "-cpu" in feedstock name intentionally
+  - id: pytorch-feedstock-policy
     repo: pytorch-cpu-feedstock
     roles:
       - admin
       - maintain
       - write
+    # manual intersection between pytorch maintainers and people who signed the open-gpu TOS:
+    # users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
     users:
-      - wolfv
-      - baszalmstra
       - Tobias-Fischer
       - hmaarrfk
       - h-vetinari
       - isuruf
       - mgorny
       - jeongseok-meta
+      # not on open-gpu-server access list yet
+      # - wolfv
+      # - baszalmstra
     pull_request: true
-  - id: pytorch-cpu-feedstock-gpu-policy
-    repo: pytorch-cpu-feedstock
-    roles:
-      - admin
-      - maintain
-      - write
-    pull_request: true
-    users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
   - id: pytorch-scatter-feedstock-policy
     repo: pytorch_scatter-feedstock
     roles:
@@ -316,19 +312,19 @@ access_control:
       - flash-attn-feedstock-policy
       - libmagma-feedstock-policy
       - muscat-split-feedstock-policy
-      - pytorch-cpu-feedstock-gpu-policy
+      - pytorch-feedstock-policy
       - tensorflow-feedstock-policy
       - tinygrad-feedstock-policy
       - torchao-feedstock-policy
   - resource: cirun-openstack-gpu-xlarge
     policies:
       - cf-autotick-bot-test-package-policy
-      - pytorch-cpu-feedstock-gpu-policy
+      - pytorch-feedstock-policy
       - tensorflow-feedstock-policy
   - resource: cirun-openstack-gpu-2xlarge
     policies:
       - cf-autotick-bot-test-package-policy
-      - pytorch-cpu-feedstock-gpu-policy
+      - pytorch-feedstock-policy
       - tensorflow-feedstock-policy
       - tinygrad-feedstock-policy
       - viskores-feedstock-policy
@@ -336,7 +332,7 @@ access_control:
   - resource: cirun-openstack-gpu-4xlarge
     policies:
       - cf-autotick-bot-test-package-policy
-      - pytorch-cpu-feedstock-gpu-policy
+      - pytorch-feedstock-policy
   # Linux: CPU
   - resource: cirun-openstack-cpu-medium
     policies:
@@ -352,7 +348,7 @@ access_control:
       - mongodb-feedstock-policy
       - nodejs-feedstock-policy
       - onnxruntime-feedstock-policy
-      - pytorch-cpu-feedstock-gpu-policy
+      - pytorch-feedstock-policy
       - pytorch-scatter-feedstock-policy
       - tensorflow-feedstock-policy
       - tinygrad-feedstock-policy
@@ -365,7 +361,7 @@ access_control:
       - flash-attn-feedstock-policy
       - mongodb-feedstock-policy
       - onnxruntime-feedstock-policy
-      - pytorch-cpu-feedstock-gpu-policy
+      - pytorch-feedstock-policy
       - qt-webengine-feedstock-policy
       - tensorflow-feedstock-policy
       - torchao-feedstock-policy
@@ -377,7 +373,7 @@ access_control:
       - cf-autotick-bot-test-package-policy
       - jaxlib-feedstock-policy
       - onnxruntime-feedstock-policy
-      - pytorch-cpu-feedstock-gpu-policy
+      - pytorch-feedstock-policy
       - tensorflow-feedstock-policy
       - torchao-feedstock-policy
       - viskores-feedstock-policy
@@ -405,14 +401,14 @@ access_control:
     policies:
       - libmagma-feedstock-windows-policy
       - onnxruntime-feedstock-policy
-      - pytorch-cpu-feedstock-cpu-policy
+      - pytorch-feedstock-policy
   # OSX
   - resource: cirun-macos-m4-large
     policies:
       - gstreamer-feedstock-osx-m4-policy
       - nodejs-feedstock-policy
       - pixi-pack-feedstock-osx-m4-policy
-      - pytorch-cpu-feedstock-cpu-policy
+      - pytorch-feedstock-policy
       - temporalio-cli-feedstock-osx-m4-policy
       - tensorflow-feedstock-osx-m4-policy
       - tinygrad-feedstock-policy

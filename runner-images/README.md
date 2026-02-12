@@ -44,6 +44,10 @@ gh secret set AZURE_SUBSCRIPTION_ID --body "<value>"
 
 Prerequisites: `az` (Azure CLI, logged in to the prefix.dev-sponsored Azure account with the correct subscription selected) and `jq`. The script is idempotent and safe to re-run.
 
+## Updating the Runner Image
+
+After a new image is built, copy the **Image ID** from the build summary and update the `machine_image` field for the Windows runners in `.cirun.global.yml`.
+
 ## Build Locally
 
 Requires Azure CLI login (`az login`):

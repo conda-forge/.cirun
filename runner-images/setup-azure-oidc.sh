@@ -5,7 +5,7 @@ set -euo pipefail
 # Usage: ./setup-azure-oidc.sh <GITHUB_ORG/REPO> [LOCATION]
 # Example: ./setup-azure-oidc.sh conda-forge/.cirun uksouth
 
-APP_NAME="cirun-conda-forge-windows-image-packer"
+APP_NAME_PREFIX="cirun-conda-forge-windows-image-packer"
 
 check_prerequisites() {
     if ! command -v az &> /dev/null; then
@@ -36,31 +36,48 @@ create_app_registration() {
 }
 
 create_service_principal() {
-    echo "==> Creating service principal"
-    az ad sp create --id "${APP_ID}" --output none
+    if az ad sp show --id "${APP_ID}" &> /dev/null; then
+        echo "==> Service principal already exists, skipping"
+    else
+        echo "==> Creating service principal"
+        az ad sp create --id "${APP_ID}" --output none
+    fi
 }
 
 assign_contributor_role() {
     local subscription_id="$1"
-    echo "==> Assigning Contributor role on subscription ${subscription_id}"
-    az role assignment create \
-        --assignee "${APP_ID}" \
-        --role "Contributor" \
-        --scope "/subscriptions/${subscription_id}" \
-        --output none
+    local existing
+    existing=$(az role assignment list --assignee "${APP_ID}" --role "Contributor" --scope "/subscriptions/${subscription_id}" --query "length(@)" --output tsv)
+    if [ "$existing" -gt 0 ]; then
+        echo "==> Contributor role already assigned, skipping"
+    else
+        echo "==> Assigning Contributor role on subscription ${subscription_id}"
+        az role assignment create \
+            --assignee "${APP_ID}" \
+            --role "Contributor" \
+            --scope "/subscriptions/${subscription_id}" \
+            --output none
+    fi
 }
 
 add_federated_credential() {
     local github_repo="$1"
-    echo "==> Adding federated credential for repo:${github_repo}:ref:refs/heads/main"
-    az ad app federated-credential create \
-        --id "${APP_OBJECT_ID}" \
-        --parameters "{
-            \"name\": \"github-actions-main\",
-            \"issuer\": \"https://token.actions.githubusercontent.com\",
-            \"subject\": \"repo:${github_repo}:ref:refs/heads/main\",
-            \"audiences\": [\"api://AzureADTokenExchange\"]
-        }" --output none
+    local subject="repo:${github_repo}:ref:refs/heads/main"
+    local existing
+    existing=$(az ad app federated-credential list --id "${APP_OBJECT_ID}" --query "[?subject=='${subject}'] | length(@)" --output tsv)
+    if [ "$existing" -gt 0 ]; then
+        echo "==> Federated credential for ${subject} already exists, skipping"
+    else
+        echo "==> Adding federated credential for ${subject}"
+        az ad app federated-credential create \
+            --id "${APP_OBJECT_ID}" \
+            --parameters "{
+                \"name\": \"github-actions-main\",
+                \"issuer\": \"https://token.actions.githubusercontent.com\",
+                \"subject\": \"${subject}\",
+                \"audiences\": [\"api://AzureADTokenExchange\"]
+            }" --output none
+    fi
 }
 
 main() {
@@ -71,6 +88,10 @@ main() {
     fi
 
     local github_repo="$1"
+    # e.g. conda-forge/.cirun -> conda-forge-cirun
+    local repo_suffix
+    repo_suffix=$(echo "$github_repo" | tr '/.' '-')
+    APP_NAME="${APP_NAME_PREFIX}-${repo_suffix}"
 
     check_prerequisites
     create_app_registration

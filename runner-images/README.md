@@ -42,7 +42,7 @@ gh secret set AZURE_TENANT_ID --body "<value>"
 gh secret set AZURE_SUBSCRIPTION_ID --body "<value>"
 ```
 
-Prerequisites: `az` (Azure CLI, logged in) and `jq`.
+Prerequisites: `az` (Azure CLI, logged in to the prefix.dev-sponsored Azure account with the correct subscription selected) and `jq`. The script is idempotent and safe to re-run.
 
 ## Build Locally
 

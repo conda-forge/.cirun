@@ -60,9 +60,9 @@ jobs:
       - name: Azure Login (OIDC)
         uses: azure/login@a457da9ea143d694b1b9c7c869ebb04ebe844ef5 # v2.3.0
         with:
-          client-id: ${{ secrets.AZURE_CLIENT_ID }}
-          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
-          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+          client-id: ${{ secrets.WINDOWS_CI_AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.WINDOWS_CI_AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.WINDOWS_CI_AZURE_SUBSCRIPTION_ID }}
 
       - name: Setup Packer
         uses: hashicorp/setup-packer@1aa358be5cf73883762b302a3a03abd66e75b232 # v3.1.0
@@ -72,9 +72,9 @@ jobs:
 
       - name: Packer Build
         env:
-          ARM_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
-          ARM_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
-          ARM_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
+          ARM_CLIENT_ID: ${{ secrets.WINDOWS_CI_AZURE_CLIENT_ID }}
+          ARM_SUBSCRIPTION_ID: ${{ secrets.WINDOWS_CI_AZURE_SUBSCRIPTION_ID }}
+          ARM_TENANT_ID: ${{ secrets.WINDOWS_CI_AZURE_TENANT_ID }}
         run: |
           TIMESTAMP=$(date +%Y%m%d-%H%M%S)
 

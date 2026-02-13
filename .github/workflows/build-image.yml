@@ -1,0 +1,115 @@
+name: Build Azure Windows Image
+
+on:
+  workflow_dispatch:
+    inputs:
+      managed_image_name:
+        description: "Name for the managed image"
+        required: false
+        default: ""
+  push:
+    branches: [main]
+    paths:
+      - "runner-images/**"
+  pull_request:
+    paths:
+      - "runner-images/**"
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  validate:
+    name: Validate Packer Templates
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Setup Packer
+        uses: hashicorp/setup-packer@1aa358be5cf73883762b302a3a03abd66e75b232 # v3.1.0
+
+      - name: Packer Init
+        run: packer init runner-images/packer/templates/
+
+      - name: Packer Format Check
+        run: packer fmt -check runner-images/packer/templates/
+
+      - name: Packer Validate
+        run: |
+          packer validate \
+            -var "managed_image_resource_group_name=validate-only" \
+            -var "client_id=00000000-0000-0000-0000-000000000000" \
+            -var "client_secret=validate-only" \
+            -var "subscription_id=00000000-0000-0000-0000-000000000000" \
+            -var "tenant_id=00000000-0000-0000-0000-000000000000" \
+            runner-images/packer/templates/
+
+  build:
+    name: Build Windows Server 2022 Image
+    needs: validate
+    if: github.event_name == 'workflow_dispatch' || (github.event_name == 'push' && github.ref == 'refs/heads/main')
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Azure Login (OIDC)
+        uses: azure/login@a457da9ea143d694b1b9c7c869ebb04ebe844ef5 # v2.3.0
+        with:
+          client-id: ${{ secrets.WINDOWS_CI_AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.WINDOWS_CI_AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.WINDOWS_CI_AZURE_SUBSCRIPTION_ID }}
+
+      - name: Setup Packer
+        uses: hashicorp/setup-packer@1aa358be5cf73883762b302a3a03abd66e75b232 # v3.1.0
+
+      - name: Packer Init
+        run: packer init runner-images/packer/templates/
+
+      - name: Packer Build
+        env:
+          ARM_CLIENT_ID: ${{ secrets.WINDOWS_CI_AZURE_CLIENT_ID }}
+          ARM_SUBSCRIPTION_ID: ${{ secrets.WINDOWS_CI_AZURE_SUBSCRIPTION_ID }}
+          ARM_TENANT_ID: ${{ secrets.WINDOWS_CI_AZURE_TENANT_ID }}
+        run: |
+          TIMESTAMP=$(date +%Y%m%d-%H%M%S)
+
+          IMAGE_NAME="${{ github.event.inputs.managed_image_name }}"
+          if [ -z "$IMAGE_NAME" ]; then
+            IMAGE_NAME="cirun-win22-${TIMESTAMP}"
+          fi
+
+          RESOURCE_GROUP="cirun-runner-images-${TIMESTAMP}"
+          az group create --name "$RESOURCE_GROUP" --location "uksouth" --output none
+
+          packer build \
+            -var "managed_image_name=$IMAGE_NAME" \
+            -var "managed_image_resource_group_name=$RESOURCE_GROUP" \
+            runner-images/packer/templates/ \
+            | tee packer-output.log
+
+          echo "IMAGE_NAME=$IMAGE_NAME" >> "$GITHUB_ENV"
+          echo "RESOURCE_GROUP=$RESOURCE_GROUP" >> "$GITHUB_ENV"
+
+      - name: Build Summary
+        if: always()
+        run: |
+          echo "## Build Summary" >> $GITHUB_STEP_SUMMARY
+          echo "- **Status:** ${{ job.status }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Image OS:** Windows Server 2022" >> $GITHUB_STEP_SUMMARY
+          echo "- **Image Name:** ${IMAGE_NAME}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Resource Group:** ${RESOURCE_GROUP}" >> $GITHUB_STEP_SUMMARY
+          if [ -f packer-output.log ]; then
+            IMAGE_ID=$(grep 'ManagedImageId:' packer-output.log | awk '{print $2}')
+            IMAGE_LOCATION=$(grep 'ManagedImageLocation:' packer-output.log | awk '{print $2, $3}')
+            if [ -n "$IMAGE_ID" ]; then
+              echo "- **Image ID:** \`${IMAGE_ID}\`" >> $GITHUB_STEP_SUMMARY
+            fi
+            if [ -n "$IMAGE_LOCATION" ]; then
+              echo "- **Location:** ${IMAGE_LOCATION}" >> $GITHUB_STEP_SUMMARY
+            fi
+          fi

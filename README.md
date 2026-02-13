@@ -35,7 +35,7 @@ Check their README for the technical specs of each flavor.
 
 Long-running CPU jobs for native `win-64`.
 
-Provided by Prefix.dev-sponsored Azure instances.
+Provided by Prefix.dev-sponsored Azure instances. Images are built with Packer — see [`runner-images/`](runner-images/) for details.
 
 | `name`                          | Azure instance        |
 | ------------------------------- | --------------------- |

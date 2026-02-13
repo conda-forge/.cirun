@@ -16,9 +16,9 @@ The `build-image.yml` workflow validates Packer templates on PRs and builds imag
 
 | Secret | Description |
 |---|---|
-| `AZURE_CLIENT_ID` | App registration client ID (used for OIDC login) |
-| `AZURE_TENANT_ID` | Azure AD tenant ID |
-| `AZURE_SUBSCRIPTION_ID` | Azure subscription ID |
+| `WINDOWS_CI_AZURE_CLIENT_ID` | App registration client ID (used for OIDC login) |
+| `WINDOWS_CI_AZURE_TENANT_ID` | Azure AD tenant ID |
+| `WINDOWS_CI_AZURE_SUBSCRIPTION_ID` | Azure subscription ID |
 
 No client secrets are needed — the workflow authenticates via OIDC federated credentials. These values are not sensitive (they are just identifiers, not credentials), but are stored as secrets for convenience.
 
@@ -37,9 +37,9 @@ The GitHub repo argument is required because the OIDC federated credential is sc
 The script prints the GitHub secrets to set. Then add them:
 
 ```bash
-gh secret set AZURE_CLIENT_ID --body "<value>"
-gh secret set AZURE_TENANT_ID --body "<value>"
-gh secret set AZURE_SUBSCRIPTION_ID --body "<value>"
+gh secret set WINDOWS_CI_AZURE_CLIENT_ID --body "<value>"
+gh secret set WINDOWS_CI_AZURE_TENANT_ID --body "<value>"
+gh secret set WINDOWS_CI_AZURE_SUBSCRIPTION_ID --body "<value>"
 ```
 
 Prerequisites: `az` (Azure CLI, logged in to the prefix.dev-sponsored Azure account with the correct subscription selected) and `jq`. The script is idempotent and safe to re-run.

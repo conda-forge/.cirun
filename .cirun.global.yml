@@ -122,7 +122,7 @@ runners:
     cloud: azure
     # 8 cores, 32GB Ram, 300GB storage, x64
     instance_type: Standard_D8ads_v5
-    machine_image: "/subscriptions/df033e15-d7e5-43a0-88b8-95b833d272f9/resourceGroups/cirun-runner-images-20260224-065204/providers/Microsoft.Compute/images/cirun-win22-20260224-065204"
+    machine_image: "/subscriptions/df033e15-d7e5-43a0-88b8-95b833d272f9/resourceGroups/cirun-runner-images-20260224-080902/providers/Microsoft.Compute/images/cirun-win22-20260224-080902"
     region: uksouth
     labels:
       - windows
@@ -135,7 +135,7 @@ runners:
     cloud: azure
     # 16 cores, 64GB Ram, 1000GB storage, x64
     instance_type: Standard_D16ads_v5
-    machine_image: "/subscriptions/df033e15-d7e5-43a0-88b8-95b833d272f9/resourceGroups/cirun-runner-images-20260224-065204/providers/Microsoft.Compute/images/cirun-win22-20260224-065204"
+    machine_image: "/subscriptions/df033e15-d7e5-43a0-88b8-95b833d272f9/resourceGroups/cirun-runner-images-20260224-080902/providers/Microsoft.Compute/images/cirun-win22-20260224-080902"
     region: uksouth
     labels:
       - windows

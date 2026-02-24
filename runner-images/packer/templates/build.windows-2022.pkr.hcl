@@ -21,7 +21,7 @@ build {
   }
 
   provisioner "powershell" {
-    script = "${path.root}/../scripts/build/Install-Git.ps1"
+    script = "${path.root}/../scripts/build/Install-BasePackages.ps1"
   }
 
   provisioner "powershell" {

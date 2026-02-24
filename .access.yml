@@ -401,10 +401,18 @@ access_control:
       - openvino-feedstock-windows-policy
       - pytorch-cpu-feedstock-cpu-policy
       - tinygrad-feedstock-policy
+  - resource: cirun-azure-windows-2xlarge-ng
+    policies:
+      - clangdev-feedstock-policy
+      - llvmdev-feedstock-policy
+      - pytorch-cpu-feedstock-cpu-policy
   - resource: cirun-azure-windows-4xlarge
     policies:
       - libmagma-feedstock-windows-policy
       - onnxruntime-feedstock-policy
+      - pytorch-cpu-feedstock-cpu-policy
+  - resource: cirun-azure-windows-4xlarge-ng
+    policies:
       - pytorch-cpu-feedstock-cpu-policy
   # OSX
   - resource: cirun-macos-m4-large

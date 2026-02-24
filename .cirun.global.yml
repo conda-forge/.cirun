@@ -147,6 +147,36 @@ runners:
         osDisk:
           diskSizeGB: 1000
 
+  # for debugging new images after https://github.com/conda-forge/.cirun/pull/145
+  - name: cirun-azure-windows-2xlarge-ng
+    cloud: azure
+    # 8 cores, 32GB Ram, 300GB storage, x64
+    instance_type: Standard_D8ads_v5
+    machine_image: "/subscriptions/df033e15-d7e5-43a0-88b8-95b833d272f9/resourceGroups/cirun-runner-images-20260224-093446/providers/Microsoft.Compute/images/cirun-win22-20260224-093446"
+    region: uksouth
+    labels:
+      - windows
+      - x64
+      - cirun-azure-windows-2xlarge-ng
+    extra_config:
+      licenseType: Windows_Server
+
+  - name: cirun-azure-windows-4xlarge-ng
+    cloud: azure
+    # 16 cores, 64GB Ram, 1000GB storage, x64
+    instance_type: Standard_D16ads_v5
+    machine_image: "/subscriptions/df033e15-d7e5-43a0-88b8-95b833d272f9/resourceGroups/cirun-runner-images-20260224-093446/providers/Microsoft.Compute/images/cirun-win22-20260224-093446"
+    region: uksouth
+    labels:
+      - windows
+      - x64
+      - cirun-azure-windows-4xlarge-ng
+    extra_config:
+      licenseType: Windows_Server
+      storageProfile:
+        osDisk:
+          diskSizeGB: 1000
+
   - name: cirun-macos-m4-large
     cloud: on_prem
     # 8 cores, 8GB Ram, 100GB storage, M4

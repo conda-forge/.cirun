@@ -41,6 +41,8 @@ Provided by Prefix.dev-sponsored Azure instances. Images are built with Packer â
 | ------------------------------- | --------------------- |
 | `cirun-azure-windows-2xlarge`   | `Standard_D8ads_v5`   |
 | `cirun-azure-windows-4xlarge`   | `Standard_D16ads_v5`  |
+| `cirun-azure-windows-2xlarge-ng`| DO NOT USE |
+| `cirun-azure-windows-4xlarge-ng`| DO NOT USE |
 
 ### macOS runners
 

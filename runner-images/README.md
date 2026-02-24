@@ -10,6 +10,7 @@ Builds a Windows Server 2022 image with:
 - bash
 - pwsh
 - 7z
+- vcredist140
 
 ## CI Workflow
 

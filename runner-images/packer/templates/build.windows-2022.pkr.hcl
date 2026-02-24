@@ -6,6 +6,7 @@ build {
 
   provisioner "powershell" {
     inline = [
+      "New-Item -Path 'C:\\bld' -ItemType Directory -Force",
       "New-Item -Path 'C:\\image' -ItemType Directory -Force",
       "New-Item -Path 'C:\\image\\scripts' -ItemType Directory -Force",
     ]

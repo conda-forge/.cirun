@@ -3,7 +3,7 @@ set -euo pipefail
 
 # Setup Azure OIDC for GitHub Actions image builds.
 # Usage: ./setup-azure-oidc.sh <GITHUB_ORG/REPO> [LOCATION]
-# Example: ./setup-azure-oidc.sh conda-forge/.cirun uksouth
+# Example: ./setup-azure-oidc.sh conda-forge/.cirun eastus
 
 APP_NAME_PREFIX="cirun-conda-forge-windows-image-packer"
 

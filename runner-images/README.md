@@ -7,6 +7,8 @@ Packer templates for building CI runner images on Azure, using the Azure account
 Builds a Windows Server 2022 image with:
 - Chocolatey
 - Git
+- bash
+- pwsh
 
 ## CI Workflow
 

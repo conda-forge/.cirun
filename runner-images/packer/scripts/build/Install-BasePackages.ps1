@@ -22,6 +22,6 @@ $env:Path = [System.Environment]::GetEnvironmentVariable("Path", "Machine") + ";
 git --version
 bash --version
 bash -c "pwsh --version"
-7z --version
+7z --help
 
 Write-Host "Base Packages installed successfully"

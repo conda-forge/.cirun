@@ -84,7 +84,7 @@ jobs:
           fi
 
           RESOURCE_GROUP="cirun-runner-images-${TIMESTAMP}"
-          az group create --name "$RESOURCE_GROUP" --location "eastus" --output none
+          az group create --name "$RESOURCE_GROUP" --location "uksouth" --output none
 
           packer build \
             -var "managed_image_name=$IMAGE_NAME" \

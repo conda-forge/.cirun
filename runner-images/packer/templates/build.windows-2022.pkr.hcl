@@ -1,4 +1,7 @@
 build {
+  # "arm" has nothing to do with the processor architecture here, but stands for Azure Resource Manager;
+  # we cannot rename it, because the upstream resource definition we're using is named like that, see
+  # https://developer.hashicorp.com/packer/integrations/hashicorp/azure/latest/components/builder/arm#basic-example
   sources = ["source.azure-arm.windows"]
 
   provisioner "powershell" {

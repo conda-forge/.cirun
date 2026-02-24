@@ -9,6 +9,7 @@ Builds a Windows Server 2022 image with:
 - Git
 - bash
 - pwsh
+- 7z
 
 ## CI Workflow
 

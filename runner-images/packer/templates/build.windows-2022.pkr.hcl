@@ -6,9 +6,13 @@ build {
 
   provisioner "powershell" {
     inline = [
-      "New-Item -Path 'C:\\bld' -ItemType Directory -Force",
       "New-Item -Path 'C:\\image' -ItemType Directory -Force",
       "New-Item -Path 'C:\\image\\scripts' -ItemType Directory -Force",
+      # default paths for CONDA_BLD_DIR / MINIFORGE_HOME
+      "New-Item -Path 'C:\\bld' -ItemType Directory -Force",
+      "New-Item -Path 'D:\\bld' -ItemType Directory -Force",
+      "New-Item -Path 'C:\\Miniforge' -ItemType Directory -Force",
+      "New-Item -Path 'D:\\Miniforge' -ItemType Directory -Force",
     ]
   }
 

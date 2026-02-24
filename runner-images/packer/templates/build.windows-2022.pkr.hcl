@@ -25,10 +25,19 @@ build {
     script = "${path.root}/../scripts/build/Install-BasePackages.ps1"
   }
 
+  # enable long paths on windows
   provisioner "powershell" {
     inline = [
-      "git --version",
-      "Write-Host 'Git verification succeeded'",
+      "Set-ItemProperty -Path 'HKLM:\\SYSTEM\\CurrentControlSet\\Control\\FileSystem' -Name 'LongPathsEnabled' -Value 1"
+    ]
+  }
+  # needs restart to take effect
+  provisioner "windows-restart" {}
+
+  provisioner "powershell" {
+    inline = [
+      "git config --system core.longpaths true",
+      "Write-Host 'Git setup succeeded'",
     ]
   }
 

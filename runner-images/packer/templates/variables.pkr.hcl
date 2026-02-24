@@ -20,7 +20,7 @@ variable "tenant_id" {
 
 variable "location" {
   type    = string
-  default = "UK South"
+  default = "East US"
 }
 
 variable "managed_image_name" {

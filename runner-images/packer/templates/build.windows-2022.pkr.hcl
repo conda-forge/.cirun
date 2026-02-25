@@ -8,8 +8,10 @@ build {
     destination = "${var.image_folder}\\"
     sources = [
       "${path.root}/../scripts",
+      "${path.root}/../toolsets",
     ]
   }
+
   provisioner "powershell" {
     inline = [
       # expected to exist by conda-build

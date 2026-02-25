@@ -63,3 +63,16 @@ variable "image_os" {
   type    = string
   default = "win22"
 }
+variable "install_password" {
+  type      = string
+  default   = ""
+  sensitive = true
+}
+variable "install_user" {
+  type    = string
+  default = "installer"
+}
+variable "temp_dir" {
+  type    = string
+  default = "D:\\temp"
+}

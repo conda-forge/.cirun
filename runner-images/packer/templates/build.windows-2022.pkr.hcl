@@ -48,6 +48,21 @@ build {
   }
 
   provisioner "powershell" {
+    elevated_password = "${var.install_password}"
+    elevated_user     = "${var.install_user}"
+    environment_vars  = ["IMAGE_FOLDER=${var.image_folder}", "TEMP_DIR=${var.temp_dir}"]
+    scripts           = [
+      "${path.root}/../scripts/build/Install-VisualStudio.ps1",
+    ]
+    valid_exit_codes  = [0, 3010]
+  }
+
+  provisioner "windows-restart" {
+    check_registry  = true
+    restart_timeout = "10m"
+  }
+
+  provisioner "powershell" {
     inline = [
       "& $env:SystemRoot\\System32\\Sysprep\\Sysprep.exe /oobe /generalize /quiet /quit /mode:vm",
       "while ($true) {",

@@ -11,6 +11,7 @@ Builds a Windows Server 2022 image with:
 - pwsh
 - 7z
 - vcredist140
+- MSVC
 
 ## CI Workflow
 

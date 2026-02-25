@@ -6,11 +6,11 @@ build {
 
   provisioner "file" {
     destination = "${var.image_folder}\\"
-    sources     = [
+    sources = [
       "${path.root}/../scripts",
       "${path.root}/../toolsets"
-     ]
-   }
+    ]
+  }
 
   provisioner "powershell" {
     inline = [
@@ -51,10 +51,10 @@ build {
     elevated_password = "${var.install_password}"
     elevated_user     = "${var.install_user}"
     environment_vars  = ["IMAGE_FOLDER=${var.image_folder}", "TEMP_DIR=${var.temp_dir}"]
-    scripts           = [
+    scripts = [
       "${path.root}/../scripts/build/Install-VisualStudio.ps1",
     ]
-    valid_exit_codes  = [0, 3010]
+    valid_exit_codes = [0, 3010]
   }
 
   provisioner "windows-restart" {

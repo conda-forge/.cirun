@@ -16,6 +16,10 @@ build {
     inline = [
       # expected to exist by conda-build
       "New-Item -Path 'C:\\bld' -ItemType Directory -Force",
+      # support infrastructure from https://github.com/actions/runner-images
+      "Move-Item '${var.image_folder}\\scripts\\helpers' '${var.helper_script_folder}\\ImageHelpers'",
+      "New-Item -Type Directory -Path '${var.helper_script_folder}\\TestsHelpers\\'",
+      "Move-Item '${var.image_folder}\\scripts\\tests\\Helpers.psm1' '${var.helper_script_folder}\\TestsHelpers\\TestsHelpers.psm1'",
     ]
   }
 

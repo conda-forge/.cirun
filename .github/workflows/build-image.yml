@@ -35,7 +35,7 @@ jobs:
         run: packer init runner-images/packer/templates/
 
       - name: Packer Format Check
-        run: packer fmt -check runner-images/packer/templates/
+        run: packer fmt -check -diff runner-images/packer/templates/
 
       - name: Packer Validate
         run: |
@@ -50,7 +50,6 @@ jobs:
   build:
     name: Build Windows Server 2022 Image
     needs: validate
-    if: github.event_name == 'workflow_dispatch' || (github.event_name == 'push' && github.ref == 'refs/heads/main')
     runs-on: ubuntu-latest
 
     steps:

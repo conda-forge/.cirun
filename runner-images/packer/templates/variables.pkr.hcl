@@ -1,63 +1,78 @@
+// Authentication related variables
 variable "client_id" {
   type    = string
-  default = env("ARM_CLIENT_ID")
+  default = "${env("ARM_CLIENT_ID")}"
 }
-
 variable "client_secret" {
-  type    = string
-  default = env("ARM_CLIENT_SECRET")
+  type      = string
+  default   = "${env("ARM_CLIENT_SECRET")}"
+  sensitive = true
 }
-
+variable "oidc_request_token" {
+  type    = string
+  default = "${env("ACTIONS_ID_TOKEN_REQUEST_TOKEN")}"
+}
+variable "oidc_request_url" {
+  type    = string
+  default = "${env("ACTIONS_ID_TOKEN_REQUEST_URL")}"
+}
 variable "subscription_id" {
   type    = string
-  default = env("ARM_SUBSCRIPTION_ID")
+  default = "${env("ARM_SUBSCRIPTION_ID")}"
 }
-
 variable "tenant_id" {
   type    = string
-  default = env("ARM_TENANT_ID")
+  default = "${env("ARM_TENANT_ID")}"
 }
-
-variable "location" {
-  type    = string
-  default = "UK South"
-}
-
-variable "managed_image_name" {
-  type    = string
-  default = "cirun-win22-{{timestamp}}"
-}
-
-variable "managed_image_resource_group_name" {
-  type = string
-}
-
-variable "temp_resource_group_name" {
-  type    = string
-  default = ""
-}
-
-variable "vm_size" {
-  type    = string
-  default = "Standard_D16ads_v5"
-}
-
-variable "image_os" {
-  type    = string
-  default = "win22"
-}
-
 variable "use_azure_cli_auth" {
   type    = bool
   default = false
 }
 
-variable "oidc_request_url" {
+// Azure environment related variables
+variable "location" {
   type    = string
-  default = env("ACTIONS_ID_TOKEN_REQUEST_URL")
+  default = "UK South"
+}
+variable "managed_image_name" {
+  type    = string
+  default = "cirun-win22-{{timestamp}}"
+}
+variable "managed_image_resource_group_name" {
+  type = string
+}
+variable "temp_resource_group_name" {
+  type    = string
+  default = ""
+}
+variable "vm_size" {
+  type    = string
+  default = "Standard_D16ads_v5"
 }
 
-variable "oidc_request_token" {
+// Image related variables
+variable "helper_script_folder" {
   type    = string
-  default = env("ACTIONS_ID_TOKEN_REQUEST_TOKEN")
+  default = "C:\\Program Files\\WindowsPowerShell\\Modules\\"
+}
+variable "image_folder" {
+  type    = string
+  default = "C:\\image"
+}
+variable "image_os" {
+  type    = string
+  default = "win22"
+}
+variable "install_password" {
+  type      = string
+  default   = ""
+  sensitive = true
+}
+variable "install_user" {
+  type    = string
+  default = "installer"
+}
+variable "temp_dir" {
+  type    = string
+  default = "D:\\temp"
 }

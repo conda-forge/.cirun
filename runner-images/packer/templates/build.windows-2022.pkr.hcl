@@ -4,17 +4,18 @@ build {
   # https://developer.hashicorp.com/packer/integrations/hashicorp/azure/latest/components/builder/arm#basic-example
   sources = ["source.azure-arm.windows"]
 
+  provisioner "file" {
+    destination = "${var.image_folder}\\"
+    sources     = [
+      "${path.root}/../scripts",
+     ]
+   }
+
   provisioner "powershell" {
     inline = [
+      # expected to exist by conda-build
       "New-Item -Path 'C:\\bld' -ItemType Directory -Force",
-      "New-Item -Path 'C:\\image' -ItemType Directory -Force",
-      "New-Item -Path 'C:\\image\\scripts' -ItemType Directory -Force",
     ]
-  }
-
-  provisioner "file" {
-    source      = "${path.root}/../scripts/build/"
-    destination = "C:\\image\\scripts\\build\\"
   }
 
   provisioner "powershell" {

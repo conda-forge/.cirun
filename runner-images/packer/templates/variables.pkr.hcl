@@ -51,6 +51,10 @@ variable "vm_size" {
 }
 
 // Image related variables
+variable "image_folder" {
+  type    = string
+  default = "C:\\image"
+}
 variable "image_os" {
   type    = string
   default = "win22"

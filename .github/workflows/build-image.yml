@@ -35,7 +35,7 @@ jobs:
         run: packer init runner-images/packer/templates/
 
       - name: Packer Format Check
-        run: packer fmt -check runner-images/packer/templates/
+        run: packer fmt -check -diff runner-images/packer/templates/
 
       - name: Packer Validate
         run: |

@@ -51,6 +51,10 @@ variable "vm_size" {
 }
 
 // Image related variables
+variable "helper_script_folder" {
+  type    = string
+  default = "C:\\Program Files\\WindowsPowerShell\\Modules\\"
+}
 variable "image_folder" {
   type    = string
   default = "C:\\image"

@@ -16,6 +16,11 @@ build {
     inline = [
       # expected to exist by conda-build
       "New-Item -Path 'C:\\bld' -ItemType Directory -Force",
+      # support infrastructure from https://github.com/actions/runner-images
+      "Move-Item '${var.image_folder}\\scripts\\helpers' '${var.helper_script_folder}\\ImageHelpers'",
+      "Remove-Item -Recurse '${var.image_folder}\\scripts'",
+      "Move-Item '${var.image_folder}\\toolsets\\toolset.json' '${var.image_folder}\\toolset.json'",
+      "Remove-Item -Recurse '${var.image_folder}\\toolsets'"
     ]
   }
 

@@ -103,6 +103,15 @@ policies:
       - Tobias-Fischer
       - wolfv
     pull_request: true
+  - id: llamacpp-feedstock-policy
+    repo: llama.cpp-feedstock
+    pull_request: true
+    roles:
+      - admin
+      - maintain
+      - write
+    users:
+      - traversaro
   - id: llvmdev-feedstock-policy
     repo: llvmdev-feedstock
     pull_request: true
@@ -396,6 +405,7 @@ access_control:
     policies:
       - clangdev-feedstock-policy
       - libmagma-feedstock-windows-policy
+      - llamacpp-feedstock-policy
       - llvmdev-feedstock-policy
       - onnxruntime-feedstock-policy
       - openvino-feedstock-windows-policy

@@ -4,17 +4,23 @@ build {
   # https://developer.hashicorp.com/packer/integrations/hashicorp/azure/latest/components/builder/arm#basic-example
   sources = ["source.azure-arm.windows"]
 
-  provisioner "powershell" {
-    inline = [
-      "New-Item -Path 'C:\\bld' -ItemType Directory -Force",
-      "New-Item -Path 'C:\\image' -ItemType Directory -Force",
-      "New-Item -Path 'C:\\image\\scripts' -ItemType Directory -Force",
+  provisioner "file" {
+    destination = "${var.image_folder}\\"
+    sources = [
+      "${path.root}/../scripts",
+      "${path.root}/../toolsets"
     ]
   }
 
-  provisioner "file" {
-    source      = "${path.root}/../scripts/build/"
-    destination = "C:\\image\\scripts\\build\\"
+  provisioner "powershell" {
+    inline = [
+      # expected to exist by conda-build
+      "New-Item -Path 'C:\\bld' -ItemType Directory -Force",
+      # support infrastructure from https://github.com/actions/runner-images
+      "Move-Item '${var.image_folder}\\scripts\\helpers' '${var.helper_script_folder}\\ImageHelpers'",
+      "New-Item -Type Directory -Path '${var.helper_script_folder}\\TestsHelpers\\'",
+      "Move-Item '${var.image_folder}\\scripts\\tests\\Helpers.psm1' '${var.helper_script_folder}\\TestsHelpers\\TestsHelpers.psm1'",
+    ]
   }
 
   provisioner "powershell" {
@@ -39,6 +45,21 @@ build {
       "git config --system core.longpaths true",
       "Write-Host 'Git setup succeeded'",
     ]
+  }
+
+  provisioner "powershell" {
+    elevated_password = "${var.install_password}"
+    elevated_user     = "${var.install_user}"
+    environment_vars  = ["IMAGE_FOLDER=${var.image_folder}", "TEMP_DIR=${var.temp_dir}"]
+    scripts = [
+      "${path.root}/../scripts/build/Install-VisualStudio.ps1",
+    ]
+    valid_exit_codes = [0, 3010]
+  }
+
+  provisioner "windows-restart" {
+    check_registry  = true
+    restart_timeout = "10m"
   }
 
   provisioner "powershell" {

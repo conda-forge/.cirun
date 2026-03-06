@@ -75,6 +75,7 @@ jobs:
           ARM_SUBSCRIPTION_ID: ${{ secrets.WINDOWS_CI_AZURE_SUBSCRIPTION_ID }}
           ARM_TENANT_ID: ${{ secrets.WINDOWS_CI_AZURE_TENANT_ID }}
         run: |
+          set -o pipefail
           TIMESTAMP=$(date +%Y%m%d-%H%M%S)
 
           IMAGE_NAME="${{ github.event.inputs.managed_image_name }}"

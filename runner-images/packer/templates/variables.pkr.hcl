@@ -63,3 +63,7 @@ variable "image_os" {
   type    = string
   default = "win22"
 }
+variable "temp_dir" {
+  type    = string
+  default = "D:\\temp"
+}

@@ -16,6 +16,8 @@ build {
     inline = [
       # expected to exist by conda-build
       "New-Item -Path 'C:\\bld' -ItemType Directory -Force",
+      # needed by VS install process (see variables.pkr.hcl)
+      "New-Item -Path 'D:\\temp' -ItemType Directory -Force",
       # support infrastructure from https://github.com/actions/runner-images
       "Move-Item '${var.image_folder}\\scripts\\helpers' '${var.helper_script_folder}\\ImageHelpers'",
       "Remove-Item -Recurse '${var.image_folder}\\scripts'",
@@ -46,6 +48,19 @@ build {
       "git config --system core.longpaths true",
       "Write-Host 'Git setup succeeded'",
     ]
+  }
+
+  provisioner "powershell" {
+    environment_vars = ["IMAGE_FOLDER=${var.image_folder}", "TEMP_DIR=${var.temp_dir}"]
+    scripts = [
+      "${path.root}/../scripts/build/Install-VisualStudio.ps1",
+    ]
+    valid_exit_codes = [0, 3010]
+  }
+
+  provisioner "windows-restart" {
+    check_registry  = true
+    restart_timeout = "10m"
   }
 
   provisioner "powershell" {

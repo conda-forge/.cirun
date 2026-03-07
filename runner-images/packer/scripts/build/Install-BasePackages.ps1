@@ -15,9 +15,6 @@ choco install pwsh -y --no-progress
 # necessary to package artefacts
 choco install 7zip -y --no-progress
 
-# C++ runtimes
-choco install vcredist140 -y --no-progress
-
 # Refresh PATH so binaries are reachable immediately
 $env:Path = [System.Environment]::GetEnvironmentVariable("Path", "Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path", "User")
 

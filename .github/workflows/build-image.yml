@@ -35,7 +35,7 @@ jobs:
         run: packer init runner-images/packer/templates/
 
       - name: Packer Format Check
-        run: packer fmt -check runner-images/packer/templates/
+        run: packer fmt -check -diff runner-images/packer/templates/
 
       - name: Packer Validate
         run: |
@@ -50,7 +50,6 @@ jobs:
   build:
     name: Build Windows Server 2022 Image
     needs: validate
-    if: github.event_name == 'workflow_dispatch' || (github.event_name == 'push' && github.ref == 'refs/heads/main')
     runs-on: ubuntu-latest
 
     steps:
@@ -76,6 +75,7 @@ jobs:
           ARM_SUBSCRIPTION_ID: ${{ secrets.WINDOWS_CI_AZURE_SUBSCRIPTION_ID }}
           ARM_TENANT_ID: ${{ secrets.WINDOWS_CI_AZURE_TENANT_ID }}
         run: |
+          set -o pipefail
           TIMESTAMP=$(date +%Y%m%d-%H%M%S)
 
           IMAGE_NAME="${{ github.event.inputs.managed_image_name }}"

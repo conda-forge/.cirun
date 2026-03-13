@@ -7,7 +7,6 @@ policies:
       - maintain
       - write
     pull_request: true
-    users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
   - id: cf-autotick-bot-test-package-policy
     repo: cf-autotick-bot-test-package-feedstock
     roles:
@@ -15,7 +14,6 @@ policies:
       - maintain
       - write
     pull_request: true
-    users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
   - id: clangdev-feedstock-policy
     repo: clangdev-feedstock
     pull_request: true
@@ -35,7 +33,6 @@ policies:
       - maintain
       - write
     pull_request: false
-    users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
   - id: conda-smithy-feedstock-policy
     repo: conda-smithy-feedstock
     roles:
@@ -43,7 +40,6 @@ policies:
       - maintain
       - write
     pull_request: false
-    users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
   - id: cutlass-feedstock-policy
     repo: cutlass-feedstock
     roles:
@@ -51,7 +47,6 @@ policies:
       - maintain
       - write
     pull_request: true
-    users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
   - id: flash-attn-feedstock-policy
     repo: flash-attn-feedstock
     roles:
@@ -59,7 +54,6 @@ policies:
       - maintain
       - write
     pull_request: true
-    users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
   - id: gstreamer-feedstock-osx-m4-policy
     repo: gstreamer-feedstock
     roles:
@@ -77,7 +71,6 @@ policies:
       - maintain
       - write
     pull_request: true
-    users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
   - id: libmagma-feedstock-policy
     repo: libmagma-feedstock
     roles:
@@ -85,7 +78,6 @@ policies:
       - maintain
       - write
     pull_request: true
-    users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
   - id: libmagma-feedstock-windows-policy
     repo: libmagma-feedstock
     roles:
@@ -131,7 +123,6 @@ policies:
       - maintain
       - write
     pull_request: true
-    users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
   - id: muscat-split-feedstock-policy
     repo: muscat-split-feedstock
     roles:
@@ -139,7 +130,6 @@ policies:
       - maintain
       - write
     pull_request: true
-    users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
   - id: nodejs-feedstock-policy
     repo: nodejs-feedstock
     roles:
@@ -147,7 +137,6 @@ policies:
       - maintain
       - write
     pull_request: true
-    users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
   - id: onnxruntime-feedstock-policy
     repo: onnxruntime-feedstock
     roles:
@@ -155,7 +144,6 @@ policies:
       - maintain
       - write
     pull_request: true
-    users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
   - id: openvino-feedstock-windows-policy
     repo: openvino-feedstock
     roles:
@@ -200,7 +188,6 @@ policies:
       - maintain
       - write
     pull_request: true
-    users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
   - id: pytorch-scatter-feedstock-policy
     repo: pytorch_scatter-feedstock
     roles:
@@ -208,7 +195,6 @@ policies:
       - maintain
       - write
     pull_request: true
-    users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
   - id: qt-webengine-feedstock-policy
     repo: qt-webengine-feedstock
     roles:
@@ -216,7 +202,6 @@ policies:
       - maintain
       - write
     pull_request: true
-    users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
   - id: ray-packages-feedstock-policy
     repo: ray-packages-feedstock
     roles:
@@ -224,7 +209,6 @@ policies:
       - maintain
       - write
     pull_request: true
-    users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
   - id: temporalio-cli-feedstock-osx-m4-policy
     repo: temporalio-cli-feedstock
     roles:
@@ -256,7 +240,6 @@ policies:
       - maintain
       - write
     pull_request: true
-    users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
   - id: tinygrad-feedstock-policy
     repo: tinygrad-feedstock
     roles:
@@ -273,7 +256,6 @@ policies:
       - maintain
       - write
     pull_request: true
-    users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
   - id: viskores-feedstock-policy
     repo: viskores-feedstock
     roles:
@@ -281,7 +263,6 @@ policies:
       - maintain
       - write
     pull_request: true
-    users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
   - id: vllm-feedstock-policy
     repo: vllm-feedstock
     roles:
@@ -289,7 +270,6 @@ policies:
       - maintain
       - write
     pull_request: true
-    users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
   - id: vtk-m-feedstock-policy
     repo: vtk-m-feedstock
     roles:
@@ -297,7 +277,6 @@ policies:
       - maintain
       - write
     pull_request: true
-    users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
   - id: webkit2gtk4.1-feedstock-policy
     repo: webkit2gtk4.1-feedstock
     roles:
@@ -305,7 +284,6 @@ policies:
       - maintain
       - write
     pull_request: true
-    users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
   - id: xformers-feedstock-policy
     repo: xformers-feedstock
     roles:
@@ -313,93 +291,7 @@ policies:
       - maintain
       - write
     pull_request: true
-    users_from_json: https://raw.githubusercontent.com/Quansight/open-gpu-server/main/access/conda-forge-users.json
 access_control:
-  # Linux: GPU
-  - resource: cirun-openstack-gpu-large
-    policies:
-      - astra-toolbox-feedstock-policy
-      - cf-autotick-bot-test-package-policy
-      - conda-forge-ci-setup-feedstock-policy
-      - conda-smithy-feedstock-policy
-      - flash-attn-feedstock-policy
-      - libmagma-feedstock-policy
-      - muscat-split-feedstock-policy
-      - pytorch-cpu-feedstock-gpu-policy
-      - tensorflow-feedstock-policy
-      - tinygrad-feedstock-policy
-      - torchao-feedstock-policy
-  - resource: cirun-openstack-gpu-xlarge
-    policies:
-      - cf-autotick-bot-test-package-policy
-      - pytorch-cpu-feedstock-gpu-policy
-      - tensorflow-feedstock-policy
-  - resource: cirun-openstack-gpu-2xlarge
-    policies:
-      - cf-autotick-bot-test-package-policy
-      - pytorch-cpu-feedstock-gpu-policy
-      - tensorflow-feedstock-policy
-      - tinygrad-feedstock-policy
-      - viskores-feedstock-policy
-      - vllm-feedstock-policy
-  - resource: cirun-openstack-gpu-4xlarge
-    policies:
-      - cf-autotick-bot-test-package-policy
-      - pytorch-cpu-feedstock-gpu-policy
-  # Linux: CPU
-  - resource: cirun-openstack-cpu-medium
-    policies:
-      - cf-autotick-bot-test-package-policy
-      - onnxruntime-feedstock-policy
-      - qt-webengine-feedstock-policy
-  - resource: cirun-openstack-cpu-large
-    policies:
-      - cf-autotick-bot-test-package-policy
-      - cutlass-feedstock-policy
-      - flash-attn-feedstock-policy
-      - jaxlib-feedstock-policy
-      - mongodb-feedstock-policy
-      - nodejs-feedstock-policy
-      - onnxruntime-feedstock-policy
-      - pytorch-cpu-feedstock-gpu-policy
-      - pytorch-scatter-feedstock-policy
-      - tensorflow-feedstock-policy
-      - tinygrad-feedstock-policy
-      - torchao-feedstock-policy
-      - viskores-feedstock-policy
-      - vllm-feedstock-policy
-  - resource: cirun-openstack-cpu-xlarge
-    policies:
-      - cf-autotick-bot-test-package-policy
-      - flash-attn-feedstock-policy
-      - mongodb-feedstock-policy
-      - onnxruntime-feedstock-policy
-      - pytorch-cpu-feedstock-gpu-policy
-      - qt-webengine-feedstock-policy
-      - tensorflow-feedstock-policy
-      - torchao-feedstock-policy
-      - viskores-feedstock-policy
-      - vllm-feedstock-policy
-      - xformers-feedstock-policy
-  - resource: cirun-openstack-cpu-2xlarge
-    policies:
-      - cf-autotick-bot-test-package-policy
-      - jaxlib-feedstock-policy
-      - onnxruntime-feedstock-policy
-      - pytorch-cpu-feedstock-gpu-policy
-      - tensorflow-feedstock-policy
-      - torchao-feedstock-policy
-      - viskores-feedstock-policy
-      - vllm-feedstock-policy
-      - vtk-m-feedstock-policy
-      - webkit2gtk4.1-feedstock-policy
-  - resource: cirun-openstack-cpu-4xlarge
-    policies:
-      - cf-autotick-bot-test-package-policy
-      - onnxruntime-feedstock-policy
-      - ray-packages-feedstock-policy
-      - tensorflow-feedstock-policy
-      - vllm-feedstock-policy
   # Windows
   - resource: cirun-azure-windows-2xlarge
     policies:

@@ -1,3 +1,8 @@
+// our own variables
+variable "skip_create_image" {
+  type    = bool
+  default = true
+}
 // Authentication related variables
 variable "client_id" {
   type    = string

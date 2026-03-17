@@ -89,6 +89,7 @@ jobs:
           packer build \
             -var "managed_image_name=$IMAGE_NAME" \
             -var "managed_image_resource_group_name=$RESOURCE_GROUP" \
+            -var "skip_create_image=${{ github.event_name == 'pull_request' }}" \
             runner-images/packer/templates/ \
             | tee packer-output.log
 

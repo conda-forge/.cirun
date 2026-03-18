@@ -3,11 +3,8 @@ from ruamel.yaml import YAML
 
 yaml = YAML(typ="safe")
 
-srv = "cirun-openstack"
-gpu = [f"{srv}-gpu-{x}" for x in ["large", "xlarge", "2xlarge", "4xlarge"]]
-cpu = [f"{srv}-cpu-{x}" for x in ["medium", "large", "xlarge", "2xlarge", "4xlarge"]]
 win = [f"cirun-azure-windows-{x}large{y}" for x in ["2x", "4x"] for y in ["", "-ng"]]
-expected_resources = gpu + cpu + win + ["cirun-macos-m4-large"]
+expected_resources = win + ["cirun-macos-m4-large"]
 
 for path in sys.argv[1:]:
     with open(path, "r") as f:

@@ -17,6 +17,7 @@ source "azure-arm" "windows" {
 
   oidc_request_url   = var.oidc_request_url != "" ? var.oidc_request_url : null
   oidc_request_token = var.oidc_request_token != "" ? var.oidc_request_token : null
+  skip_create_image  = var.skip_create_image
 
   location = var.location
   vm_size  = var.vm_size

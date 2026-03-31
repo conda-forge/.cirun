@@ -201,6 +201,9 @@ policies:
       - admin
       - maintain
       - write
+    users:
+      - h-vetinari
+      - jschueller
     pull_request: true
   - id: ray-packages-feedstock-policy
     repo: ray-packages-feedstock
@@ -313,6 +316,7 @@ access_control:
       - libmagma-feedstock-windows-policy
       - onnxruntime-feedstock-policy
       - pytorch-cpu-feedstock-cpu-policy
+      - qt-webengine-feedstock-policy
   - resource: cirun-azure-windows-4xlarge-ng
     policies:
       - pytorch-cpu-feedstock-cpu-policy
@@ -323,6 +327,7 @@ access_control:
       - nodejs-feedstock-policy
       - pixi-pack-feedstock-osx-m4-policy
       - pytorch-cpu-feedstock-cpu-policy
+      - qt-webengine-feedstock-policy
       - temporalio-cli-feedstock-osx-m4-policy
       - tensorflow-feedstock-osx-m4-policy
       - tinygrad-feedstock-policy

@@ -324,7 +324,7 @@ access_control:
       - nodejs-feedstock-policy
       - pixi-pack-feedstock-osx-m4-policy
       - pytorch-cpu-feedstock-cpu-policy
+      - qt-webengine-feedstock-policy
       - temporalio-cli-feedstock-osx-m4-policy
       - tensorflow-feedstock-osx-m4-policy
       - tinygrad-feedstock-policy
-      - qt-webengine-feedstock-policy

@@ -313,6 +313,7 @@ access_control:
       - libmagma-feedstock-windows-policy
       - onnxruntime-feedstock-policy
       - pytorch-cpu-feedstock-cpu-policy
+      - qt-webengine-feedstock-policy
   - resource: cirun-azure-windows-4xlarge-ng
     policies:
       - pytorch-cpu-feedstock-cpu-policy
@@ -326,3 +327,4 @@ access_control:
       - temporalio-cli-feedstock-osx-m4-policy
       - tensorflow-feedstock-osx-m4-policy
       - tinygrad-feedstock-policy
+      - qt-webengine-feedstock-policy

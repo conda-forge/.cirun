@@ -37,7 +37,7 @@ variable "use_azure_cli_auth" {
 // Azure environment related variables
 variable "location" {
   type    = string
-  default = "UK South"
+  default = "eastus"
 }
 variable "managed_image_name" {
   type    = string

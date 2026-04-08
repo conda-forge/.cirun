@@ -15,6 +15,9 @@ choco install pwsh -y --no-progress
 # necessary to package artefacts
 choco install 7zip -y --no-progress
 
+# needed by various tools to discover Visual Studio installations
+choco install vswhere -y --no-progress
+
 # Refresh PATH so binaries are reachable immediately
 $env:Path = [System.Environment]::GetEnvironmentVariable("Path", "Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path", "User")
 
@@ -23,5 +26,6 @@ git --version
 bash --version
 bash -c "pwsh --version"
 7z --help
+vswhere -help
 
 Write-Host "Base Packages installed successfully"

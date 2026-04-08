@@ -70,5 +70,5 @@ variable "image_os" {
 }
 variable "temp_dir" {
   type    = string
-  default = "D:\\temp"
+  default = "C:\\temp"
 }

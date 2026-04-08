@@ -17,7 +17,7 @@ build {
       # expected to exist by conda-build
       "New-Item -Path 'C:\\bld' -ItemType Directory -Force",
       # needed by VS install process (see variables.pkr.hcl)
-      "New-Item -Path 'D:\\temp' -ItemType Directory -Force",
+      "New-Item -Path '${var.temp_dir}' -ItemType Directory -Force",
       # support infrastructure from https://github.com/actions/runner-images
       "Move-Item '${var.image_folder}\\scripts\\helpers' '${var.helper_script_folder}\\ImageHelpers'",
       "Remove-Item -Recurse '${var.image_folder}\\scripts'",

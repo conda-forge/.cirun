@@ -22,19 +22,6 @@ if ($instanceFolders -is [array]) {
     throw "More than one instance installed"
 }
 
-# Updating content of MachineState.json file to disable autoupdate of VSIX extensions
-$vsInstallRoot = (Get-VisualStudioInstance).InstallationPath
-$newContent = '{"Extensions":[{"Key":"1e906ff5-9da8-4091-a299-5c253c55fdc9","Value":{"ShouldAutoUpdate":false}},{"Key":"Microsoft.VisualStudio.Web.AzureFunctions","Value":{"ShouldAutoUpdate":false}}],"ShouldAutoUpdate":false,"ShouldCheckForUpdates":false}'
-Set-Content -Path "$vsInstallRoot\Common7\IDE\Extensions\MachineState.json" -Value $newContent
-
-# Verify that cl.exe is discoverable via vswhere
-$clPath = & vswhere -latest -find "VC\Tools\MSVC\*\bin\Hostx64\x64\cl.exe"
-if ($clPath) {
-    Write-Host "cl.exe found at: $clPath"
-} else {
-    throw "cl.exe not found after Visual Studio installation"
-}
-
 if (Test-IsWin22) {
     # Install Windows 10 SDK version 10.0.17763
     Install-Binary -Type EXE `

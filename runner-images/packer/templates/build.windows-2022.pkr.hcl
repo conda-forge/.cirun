@@ -53,6 +53,8 @@ build {
   provisioner "powershell" {
     inline = [
       "[Net.ServicePointManager]::SecurityProtocol = [Net.ServicePointManager]::SecurityProtocol -bor 'Tls12'",
+      "Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force",
+      "Set-PSRepository -InstallationPolicy Trusted -Name PSGallery",
       "Install-Module -Name VSSetup -Scope AllUsers -SkipPublisherCheck -Force",
     ]
   }

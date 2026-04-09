@@ -10,7 +10,7 @@ runners:
     labels:
       - windows
       - x64
-      - cirun-azure-windows-2xlarge-ng
+      - cirun-azure-windows-2xlarge
     extra_config:
       licenseType: Windows_Server
 
@@ -23,7 +23,7 @@ runners:
     labels:
       - windows
       - x64
-      - cirun-azure-windows-4xlarge-ng
+      - cirun-azure-windows-4xlarge
     extra_config:
       licenseType: Windows_Server
       storageProfile:

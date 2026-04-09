@@ -4,7 +4,7 @@ runners:
   - name: cirun-azure-windows-2xlarge
     cloud: azure
     # 8 cores, 32GB Ram, 300GB storage, x64
-    instance_type: Standard_D8ads_v5
+    instance_type: Standard_D8ads_v6
     machine_image: "/subscriptions/df033e15-d7e5-43a0-88b8-95b833d272f9/resourceGroups/cirun-runner-images-20260409-051231/providers/Microsoft.Compute/images/cirun-win22-20260409-051231"
     region: eastus
     labels:
@@ -17,7 +17,7 @@ runners:
   - name: cirun-azure-windows-4xlarge
     cloud: azure
     # 16 cores, 64GB Ram, 1000GB storage, x64
-    instance_type: Standard_D16ads_v5
+    instance_type: Standard_D16ads_v6
     machine_image: "/subscriptions/df033e15-d7e5-43a0-88b8-95b833d272f9/resourceGroups/cirun-runner-images-20260409-051231/providers/Microsoft.Compute/images/cirun-win22-20260409-051231"
     region: eastus
     labels:

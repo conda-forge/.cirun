@@ -17,7 +17,7 @@ build {
       # expected to exist by conda-build
       "New-Item -Path 'C:\\bld' -ItemType Directory -Force",
       # needed by VS install process (see variables.pkr.hcl)
-      "New-Item -Path 'D:\\temp' -ItemType Directory -Force",
+      "New-Item -Path '${var.temp_dir}' -ItemType Directory -Force",
       # support infrastructure from https://github.com/actions/runner-images
       "Move-Item '${var.image_folder}\\scripts\\helpers' '${var.helper_script_folder}\\ImageHelpers'",
       "Remove-Item -Recurse '${var.image_folder}\\scripts'",
@@ -51,6 +51,15 @@ build {
   }
 
   provisioner "powershell" {
+    inline = [
+      "[Net.ServicePointManager]::SecurityProtocol = [Net.ServicePointManager]::SecurityProtocol -bor 'Tls12'",
+      "Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force",
+      "Set-PSRepository -InstallationPolicy Trusted -Name PSGallery",
+      "Install-Module -Name VSSetup -Scope AllUsers -SkipPublisherCheck -Force",
+    ]
+  }
+
+  provisioner "powershell" {
     environment_vars = ["IMAGE_FOLDER=${var.image_folder}", "TEMP_DIR=${var.temp_dir}"]
     scripts = [
       "${path.root}/../scripts/build/Install-VisualStudio.ps1",
@@ -61,6 +70,20 @@ build {
   provisioner "windows-restart" {
     check_registry  = true
     restart_timeout = "10m"
+  }
+
+  # Verify VS installation after reboot (VS returns 3010 = reboot required)
+  provisioner "powershell" {
+    inline = [
+      "Import-Module VSSetup",
+      "$vsInstallRoot = (Get-VSSetupInstance -Prerelease -All | Where-Object { $_.DisplayName -match 'Visual Studio' } | Select-Object -First 1).InstallationPath",
+      "if (-not $vsInstallRoot) { throw 'Visual Studio installation not found' }",
+      "Write-Host \"Visual Studio installed at: $vsInstallRoot\"",
+      "$newContent = '{\"Extensions\":[{\"Key\":\"1e906ff5-9da8-4091-a299-5c253c55fdc9\",\"Value\":{\"ShouldAutoUpdate\":false}},{\"Key\":\"Microsoft.VisualStudio.Web.AzureFunctions\",\"Value\":{\"ShouldAutoUpdate\":false}}],\"ShouldAutoUpdate\":false,\"ShouldCheckForUpdates\":false}'",
+      "Set-Content -Path \"$vsInstallRoot\\Common7\\IDE\\Extensions\\MachineState.json\" -Value $newContent",
+      "$clPath = & vswhere -latest -find 'VC\\Tools\\MSVC\\*\\bin\\Hostx64\\x64\\cl.exe'",
+      "if ($clPath) { Write-Host \"cl.exe found at: $clPath\" } else { throw 'cl.exe not found after Visual Studio installation' }",
+    ]
   }
 
   provisioner "powershell" {

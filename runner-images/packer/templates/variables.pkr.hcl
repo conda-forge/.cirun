@@ -37,7 +37,7 @@ variable "use_azure_cli_auth" {
 // Azure environment related variables
 variable "location" {
   type    = string
-  default = "UK South"
+  default = "eastus"
 }
 variable "managed_image_name" {
   type    = string
@@ -52,7 +52,7 @@ variable "temp_resource_group_name" {
 }
 variable "vm_size" {
   type    = string
-  default = "Standard_D16ads_v5"
+  default = "Standard_D16ads_v6"
 }
 
 // Image related variables
@@ -70,5 +70,5 @@ variable "image_os" {
 }
 variable "temp_dir" {
   type    = string
-  default = "D:\\temp"
+  default = "C:\\temp"
 }

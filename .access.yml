@@ -104,6 +104,7 @@ policies:
       - write
     users:
       - traversaro
+      - jjerphan
   - id: llvmdev-feedstock-policy
     repo: llvmdev-feedstock
     pull_request: true

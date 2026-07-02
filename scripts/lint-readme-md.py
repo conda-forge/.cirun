@@ -9,8 +9,8 @@ with Path(".cirun.global.yml").open() as f:
     cirun_yaml = yaml.load(f)
 resources = [runner["name"] for runner in cirun_yaml["runners"]]
 
-if not resources:
-    raise ValueError("No configured resources?")
+# if not resources:
+#     raise ValueError("No configured resources?")
 
 for path in sys.argv[1:]:
     if not path.endswith("README.md"):

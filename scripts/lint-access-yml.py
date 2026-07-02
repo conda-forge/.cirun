@@ -3,8 +3,7 @@ from ruamel.yaml import YAML
 
 yaml = YAML(typ="safe")
 
-win = [f"cirun-azure-windows-{x}large{y}" for x in ["2x", "4x"] for y in ["", "-ng"]]
-expected_resources = win + ["cirun-macos-m4-large"]
+expected_resources = []
 
 for path in sys.argv[1:]:
     with open(path, "r") as f:

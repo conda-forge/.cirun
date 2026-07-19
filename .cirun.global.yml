@@ -1,3 +1,21 @@
 # Self-Hosted Github Action Runners via Cirun.io
 # Reference: https://docs.cirun.io/reference/yaml
-runners: []
+runners:
+  - name: cirun-hetzner-gpu
+    cloud: on_prem
+    # Hetzner GEX44: Intel i5-13500 (6 P + 8 E cores, 20 threads), NVIDIA
+    # RTX 4000 SFF Ada 20GB, 64GB DDR4, 2x1.92TB NVMe. Provisioned as a meda
+    # VM with the GPU passed through. Sized near-max while leaving the
+    # host a cushion: meda reserves host CPU/RAM, so ~19 vCPU / ~61 GiB is
+    # free for the VM.
+    instance_type: 18vcpu-56gb-400gb
+    # Built by cirunlabs/packer-plugin-meda (images/ubuntu-gpu/template.pkr.hcl):
+    # https://github.com/cirunlabs/packer-plugin-meda/blob/main/images/ubuntu-gpu/template.pkr.hcl
+    machine_image: "ghcr.io/cirunlabs/ubuntu-gpu:latest"
+    labels:
+      - linux
+      - x64
+      - cirun-hetzner-gpu
+    extra_config:
+      executor: meda
+      gpu: all

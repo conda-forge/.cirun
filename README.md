@@ -12,4 +12,9 @@ In order to request access, please refer to `conda-forge/admin-requests`.
   with the necessary details and references.
 -->
 
-_None at the moment_.
+### On-prem GPU
+
+- `cirun-hetzner-gpu` — Linux x64 GPU runner on a Hetzner GEX44 dedicated
+  server (Intel i5-13500, NVIDIA RTX 4000 SFF Ada 20GB, 64GB RAM), provisioned
+  on demand as a meda VM with the GPU passed through. Labels: `linux`,
+  `x64`, `cirun-hetzner-gpu`.
